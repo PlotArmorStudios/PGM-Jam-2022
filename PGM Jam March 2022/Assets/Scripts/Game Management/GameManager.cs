@@ -1,3 +1,4 @@
+#define DebugShardChecker
 #define DebugLanternTimer
 #define DebugShardText
 using System;
@@ -7,17 +8,20 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static event Action<int> OnCollectShard;
+    public static event Action<int> OnResetShards;
     public static event Action OnWarnTooLow;
     public static event Action OnTurnOnLanterns;
     public static event Action OnTurnOffLanterns;
 
     public float LanternLightDuration;
+    public int RequiredShardsToCollect = 3;
 
     public static GameManager Instance;
     private float _currentLanternTime;
     private bool _timerIsOn;
-    public int RequiredShardsToCollect { get; set; }
+
     public int NumberOfShards { get; set; }
+    public float CurrentLanternTime => _currentLanternTime;
 
     void Awake()
     {
@@ -27,11 +31,18 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         OnTurnOnLanterns += StartTimer;
+        OnTurnOffLanterns += EndTimer;
+        _currentLanternTime = LanternLightDuration;
     }
 
     private void StartTimer()
     {
         _timerIsOn = true;
+    }
+    
+    private void EndTimer()
+    {
+        _timerIsOn = false;
     }
 
     private void Update()
@@ -46,10 +57,10 @@ public class GameManager : MonoBehaviour
 #if DebugLanternTimer
             Debug.Log("Lantern time ran out");
 #endif
+            OnTurnOffLanterns?.Invoke();
             _currentLanternTime = LanternLightDuration;
         }
     }
-
 
     public void CollectShard()
     {
@@ -60,9 +71,20 @@ public class GameManager : MonoBehaviour
 
     private void CheckShardsCollected()
     {
-        if (NumberOfShards == RequiredShardsToCollect) OnTurnOnLanterns?.Invoke();
-        else OnWarnTooLow?.Invoke();
+        if (NumberOfShards >= RequiredShardsToCollect)
+        {
+#if DebugShardChecker
+            Debug.Log("Turned all lights on");
+#endif
+            OnTurnOnLanterns?.Invoke();
+            NumberOfShards = 0;
+            OnResetShards?.Invoke(NumberOfShards);
+        }
+        else
+        {
+#if DebugShardChecker
+            Debug.Log("Not enough shards");
+#endif
+        }
     }
 }
-
-

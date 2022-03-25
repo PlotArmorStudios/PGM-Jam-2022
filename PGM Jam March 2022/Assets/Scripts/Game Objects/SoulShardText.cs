@@ -1,3 +1,4 @@
+#define DebugShardText
 using TMPro;
 using UnityEngine;
 
@@ -10,14 +11,28 @@ public class SoulShardText : MonoBehaviour
         _text = GetComponent<TMP_Text>();
     }
 
-    private void OnEnable() => GameManager.OnCollectShard += UpdateShardText;
-    private void OnDisable() => GameManager.OnCollectShard -= UpdateShardText;
+    private void OnEnable()
+    {
+        GameManager.OnCollectShard += UpdateShardText;
+        GameManager.OnResetShards += ResetShards;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnCollectShard -= UpdateShardText;
+        GameManager.OnResetShards -= ResetShards;
+    }
 
     private void UpdateShardText(int shardAmount)
     {
 #if DebugShardText
         Debug.Log("Shard Text Updated");
 #endif
-        _text.text = shardAmount.ToString();
+        _text.text = "Shards = " + shardAmount.ToString();
+    }
+
+    private void ResetShards(int shardAmount)
+    {
+        UpdateShardText(shardAmount);
     }
 }
