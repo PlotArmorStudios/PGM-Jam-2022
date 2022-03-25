@@ -1,3 +1,4 @@
+#define DebugShardChecker
 #define DebugLanternTimer
 #define DebugShardText
 using System;
@@ -12,11 +13,12 @@ public class GameManager : MonoBehaviour
     public static event Action OnTurnOffLanterns;
 
     public float LanternLightDuration;
+    public int RequiredShardsToCollect = 3;
 
     public static GameManager Instance;
     private float _currentLanternTime;
     private bool _timerIsOn;
-    public int RequiredShardsToCollect { get; set; }
+
     public int NumberOfShards { get; set; }
 
     void Awake()
@@ -27,6 +29,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         OnTurnOnLanterns += StartTimer;
+        _currentLanternTime = LanternLightDuration;
     }
 
     private void StartTimer()
@@ -46,6 +49,7 @@ public class GameManager : MonoBehaviour
 #if DebugLanternTimer
             Debug.Log("Lantern time ran out");
 #endif
+            OnTurnOffLanterns?.Invoke();
             _currentLanternTime = LanternLightDuration;
         }
     }
@@ -60,9 +64,18 @@ public class GameManager : MonoBehaviour
 
     private void CheckShardsCollected()
     {
-        if (NumberOfShards == RequiredShardsToCollect) OnTurnOnLanterns?.Invoke();
-        else OnWarnTooLow?.Invoke();
+        if (NumberOfShards == RequiredShardsToCollect)
+        {
+#if DebugShardChecker
+            Debug.Log("Turned all lights on");
+#endif
+            OnTurnOnLanterns?.Invoke();
+        }
+        else
+        {
+#if DebugShardChecker
+            Debug.Log("Not enough shards");
+#endif
+        }
     }
 }
-
-
