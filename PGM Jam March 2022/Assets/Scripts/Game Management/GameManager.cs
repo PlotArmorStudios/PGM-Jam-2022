@@ -8,6 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static event Action<int> OnCollectShard;
+    public static event Action<int> OnResetShards;
     public static event Action OnWarnTooLow;
     public static event Action OnTurnOnLanterns;
     public static event Action OnTurnOffLanterns;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private bool _timerIsOn;
 
     public int NumberOfShards { get; set; }
+    public float CurrentLanternTime => _currentLanternTime;
 
     void Awake()
     {
@@ -29,12 +31,18 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         OnTurnOnLanterns += StartTimer;
+        OnTurnOffLanterns += EndTimer;
         _currentLanternTime = LanternLightDuration;
     }
 
     private void StartTimer()
     {
         _timerIsOn = true;
+    }
+    
+    private void EndTimer()
+    {
+        _timerIsOn = false;
     }
 
     private void Update()
@@ -54,7 +62,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     public void CollectShard()
     {
         NumberOfShards++;
@@ -64,12 +71,14 @@ public class GameManager : MonoBehaviour
 
     private void CheckShardsCollected()
     {
-        if (NumberOfShards == RequiredShardsToCollect)
+        if (NumberOfShards >= RequiredShardsToCollect)
         {
 #if DebugShardChecker
             Debug.Log("Turned all lights on");
 #endif
             OnTurnOnLanterns?.Invoke();
+            NumberOfShards = 0;
+            OnResetShards?.Invoke(NumberOfShards);
         }
         else
         {
