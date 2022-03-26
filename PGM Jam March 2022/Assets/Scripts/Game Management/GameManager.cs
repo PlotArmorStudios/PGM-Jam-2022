@@ -1,6 +1,6 @@
-#define DebugShardChecker
-#define DebugLanternTimer
-#define DebugShardText
+//#define DebugShardChecker
+//#define DebugLanternTimer
+//#define DebugShardText
 using System;
 using TMPro;
 using UnityEngine;
