@@ -1,4 +1,4 @@
-#define DebugShardText
+//#define DebugShardText
 using TMPro;
 using UnityEngine;
 

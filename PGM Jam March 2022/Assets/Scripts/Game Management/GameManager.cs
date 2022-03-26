@@ -1,6 +1,7 @@
-#define DebugShardChecker
-#define DebugLanternTimer
-#define DebugShardText
+//#define DebugShardChecker
+//#define DebugLanternTimer
+//#define DebugShardText
+
 using System;
 using TMPro;
 using UnityEngine;
@@ -23,10 +24,7 @@ public class GameManager : MonoBehaviour
     public int NumberOfShards { get; set; }
     public float CurrentLanternTime => _currentLanternTime;
 
-    void Awake()
-    {
-        Instance = this;
-    }
+    void Awake() => Instance = this;
 
     private void OnEnable()
     {
@@ -35,22 +33,19 @@ public class GameManager : MonoBehaviour
         _currentLanternTime = LanternLightDuration;
     }
 
-    private void StartTimer()
-    {
-        _timerIsOn = true;
-    }
-    
-    private void EndTimer()
-    {
-        _timerIsOn = false;
-    }
+    [ContextMenu("Turn ON Lights")]
+    private void TurnOnLights() => OnTurnOnLanterns?.Invoke();
+
+    [ContextMenu("Turn OFF Lights")]
+    private void TurnOffLights() => OnTurnOffLanterns?.Invoke();
+
+    private void StartTimer() => _timerIsOn = true;
+
+    private void EndTimer() => _timerIsOn = false;
 
     private void Update()
     {
-        if (_timerIsOn)
-        {
-            _currentLanternTime -= Time.deltaTime;
-        }
+        if (_timerIsOn) _currentLanternTime -= Time.deltaTime;
 
         if (_currentLanternTime <= 0)
         {
