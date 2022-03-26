@@ -1,21 +1,20 @@
 #define DebugLights
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Lantern : MonoBehaviour
 {
-    [SerializeField] private Light _soulLight;
-    private void Start()
-    {
-        _soulLight = GetComponentInChildren<Light>(true);
-    }
+    [SerializeField] private List<Light> _soulLights;
+    private void OnValidate() => _soulLights = GetComponentsInChildren<Light>(true).ToList();
 
     public virtual void TurnOff()
     {
 #if DebugLights
         Debug.Log($"{gameObject.name} turned off.");
 #endif
-        _soulLight.intensity = 0f;
+        foreach (var soulLight in _soulLights) soulLight.intensity = 0f;
     }
 
     public virtual void TurnOn()
@@ -23,6 +22,6 @@ public abstract class Lantern : MonoBehaviour
 #if DebugLights
         Debug.Log($"{gameObject.name} turned on.");
 #endif
-        _soulLight.intensity = 60f;
+        foreach (var soulLight in _soulLights) soulLight.intensity = 1f;
     }
 }
