@@ -17,13 +17,13 @@ public class SoulShard : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.OnTurnOnLanterns += TurnOnLights;
-        GameManager.OnTurnOffLanterns += TurnOffLights;
+        GameManager.OnTurnOnLanterns += TurnOffLights;
+        GameManager.OnTurnOffLanterns += TurnOnLights;
     }
     private void OnDisable()
     {
-        GameManager.OnTurnOnLanterns -= TurnOnLights;
-        GameManager.OnTurnOffLanterns -= TurnOffLights;
+        GameManager.OnTurnOnLanterns -= TurnOffLights;
+        GameManager.OnTurnOffLanterns -= TurnOnLights;
     }
 
     [ContextMenu("Lights On")]
@@ -35,7 +35,7 @@ public class SoulShard : MonoBehaviour
     [ContextMenu("Lights Off")]
     private void TurnOffLights()
     {
-        foreach (var light in _lights) light.cullingMask = LayerMask.NameToLayer("Ground");
+        foreach (var light in _lights) light.cullingMask = 1 << 9;
     }
     
     private void OnTriggerEnter(Collider other)
