@@ -1,14 +1,18 @@
+using UnityEngine;
+
 public class SoulLantern : Lantern
 {
-    private void OnEnable()
-    {
-        GameManager.OnTurnOnLanterns += TurnOn;
-        GameManager.OnTurnOffLanterns += TurnOff;
-    }
+    [SerializeField] private int _areaToMoveTo = 1;
+    [SerializeField] private bool _movesPhantom;
 
-    private void OnDisable()
+    public override void TurnOn()
     {
-        GameManager.OnTurnOnLanterns -= TurnOn;
-        GameManager.OnTurnOffLanterns -= TurnOff;
+        base.TurnOn();
+
+        if (_movesPhantom)
+        {
+            GameManager.Instance.MovePhantom(_areaToMoveTo);
+            GameManager.Instance.Test();
+        }
     }
 }

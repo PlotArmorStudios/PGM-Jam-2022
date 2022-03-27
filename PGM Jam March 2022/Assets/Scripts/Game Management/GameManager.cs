@@ -3,6 +3,7 @@
 //#define DebugShardText
 
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -13,11 +14,17 @@ public class GameManager : MonoBehaviour
     public static event Action OnWarnTooLow;
     public static event Action OnTurnOnLanterns;
     public static event Action OnTurnOffLanterns;
-
+    public static event Action<int> OnMovePhantom;
+    public static event Action OnTest;
+    
     public float LanternLightDuration;
-    public int RequiredShardsToCollect = 3;
+    public int RequiredShardsToCollect { get; set; }
 
     public static GameManager Instance;
+    [SerializeField] private List<Transform> phantomMovePoints;
+
+    public List<Transform> PhantomMovePoints => phantomMovePoints;
+    
     private float _currentLanternTime;
     private bool _timerIsOn;
 
@@ -33,11 +40,21 @@ public class GameManager : MonoBehaviour
         _currentLanternTime = LanternLightDuration;
     }
 
+    public void Test()
+    {
+        OnTest?.Invoke();
+    }
+    public void MovePhantom(int phantomSpawnPoint)
+    {
+        Debug.Log("Called area to move to event");
+        OnMovePhantom?.Invoke(phantomSpawnPoint);
+    }
+    
     [ContextMenu("Turn ON Lights")]
-    private void TurnOnLights() => OnTurnOnLanterns?.Invoke();
+    public void TurnOnLights() => OnTurnOnLanterns?.Invoke();
 
     [ContextMenu("Turn OFF Lights")]
-    private void TurnOffLights() => OnTurnOffLanterns?.Invoke();
+    public void TurnOffLights() => OnTurnOffLanterns?.Invoke();
 
     private void StartTimer() => _timerIsOn = true;
 
@@ -61,25 +78,27 @@ public class GameManager : MonoBehaviour
     {
         NumberOfShards++;
         OnCollectShard?.Invoke(NumberOfShards);
-        CheckShardsCollected();
     }
 
-    private void CheckShardsCollected()
+    public bool CheckShardsCollected()
     {
         if (NumberOfShards >= RequiredShardsToCollect)
         {
 #if DebugShardChecker
             Debug.Log("Turned all lights on");
 #endif
+            
             OnTurnOnLanterns?.Invoke();
             NumberOfShards = 0;
             OnResetShards?.Invoke(NumberOfShards);
+            return true;
         }
         else
         {
 #if DebugShardChecker
             Debug.Log("Not enough shards");
 #endif
+            return false;
         }
     }
 }

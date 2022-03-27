@@ -12,7 +12,7 @@ public class MouseControl : MonoBehaviour
 
     private void Start()
     {
-        _player = FindObjectOfType<PlayerControl>().transform;
+        _player = FindObjectOfType<Player>().transform;
     }
 
     void Update()
