@@ -6,12 +6,15 @@ public class ReturnHome : IState
     private NavMeshAgent _navMeshAgent;
     private Animator _animator;
     private Vector3 _initialPosition;
-    public bool IsHome { get; private set; }
+    private Entity _entity;
 
     public ReturnHome(Entity entity)
     {
+        _entity = entity;
         _navMeshAgent = entity.NavAgent;
-        _initialPosition = entity.InitialPosition;
+        _initialPosition = new Vector3(entity.InitialPosition.x, entity.InitialPosition.y, entity.InitialPosition.z);
+        Debug.Log("New init position is: " + entity.InitialPosition);
+        Debug.Log("Position is set to: " + _initialPosition);
         _animator = entity.Animator;
     }
 
@@ -32,8 +35,9 @@ public class ReturnHome : IState
         _animator.SetBool("Running", false);
     }
 
-    void ReturnToStartPosition()
+    private void ReturnToStartPosition()
     {
-        _navMeshAgent.destination = _initialPosition;
+        Debug.Log($"Position to move to is {_entity.InitialPosition}");
+        _navMeshAgent.destination = _entity.InitialPosition;
     }
 }

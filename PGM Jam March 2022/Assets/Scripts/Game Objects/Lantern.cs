@@ -1,4 +1,4 @@
-#define DebugLights
+//#define DebugLights
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,6 @@ public abstract class Lantern : MonoBehaviour
         Debug.Log($"{gameObject.name} turned on.");
 #endif
         foreach (var soulLight in _soulLights) soulLight.intensity = 60f;
-        GameManager.Instance.TurnOnLights();
     }
     
     public virtual void TurnOff()
@@ -24,6 +23,5 @@ public abstract class Lantern : MonoBehaviour
         Debug.Log($"{gameObject.name} turned off.");
 #endif
         foreach (var soulLight in _soulLights) soulLight.intensity = 0f;
-        GameManager.Instance.TurnOffLights();
     }
 }

@@ -13,18 +13,6 @@ public class SwitchViewLayers : MonoBehaviour
         _cam = Camera.main;
     }
 
-    private void OnEnable()
-    {
-        GameManager.OnTurnOnLanterns += SwitchToLightsOnLayers;
-        GameManager.OnTurnOffLanterns += SwitchToLightsOffLayers;
-    }
-
-    private void OnDisable()
-    {
-        GameManager.OnTurnOnLanterns -= SwitchToLightsOnLayers;
-        GameManager.OnTurnOffLanterns -= SwitchToLightsOffLayers;
-    }
-
     [ContextMenu("Lights On Layers")]
     public void SwitchToLightsOnLayers()
     {
