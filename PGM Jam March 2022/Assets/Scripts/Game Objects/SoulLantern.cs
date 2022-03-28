@@ -12,7 +12,6 @@ public class SoulLantern : Lantern
         if (_movesPhantom)
         {
             GameManager.Instance.MovePhantom(_areaToMoveTo);
-            GameManager.Instance.Test();
         }
     }
 }

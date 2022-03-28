@@ -15,17 +15,6 @@ public class SoulShard : MonoBehaviour
         _lights = GetComponentsInChildren<Light>().ToList();
     }
 
-    private void OnEnable()
-    {
-        GameManager.OnTurnOnLanterns += TurnOffLights;
-        GameManager.OnTurnOffLanterns += TurnOnLights;
-    }
-    private void OnDisable()
-    {
-        GameManager.OnTurnOnLanterns -= TurnOffLights;
-        GameManager.OnTurnOffLanterns -= TurnOnLights;
-    }
-
     [ContextMenu("Lights On")]
     private void TurnOnLights()
     {

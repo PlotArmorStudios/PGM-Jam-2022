@@ -74,7 +74,7 @@ MonoBehaviour:
   _attackRadius: 0
   _attackDelay: 0
   _returnHomeTime: 4
-  _homeRadius: 4
+  _homeRadius: 30
 --- !u!135 &1459952988568763519
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -391,6 +391,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a88cfb3970bb0d34ba9f5532f317a852, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 84a37a05d1116284e8cda4714a82f012, type: 2}
     - target: {fileID: 6038414690906536434, guid: a88cfb3970bb0d34ba9f5532f317a852, type: 3}
       propertyPath: m_Layer
       value: 0

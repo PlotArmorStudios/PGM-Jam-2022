@@ -39,6 +39,7 @@ public class ChasePlayer : IState
         if (_player)
         {
             _navMeshAgent.isStopped = false;
+            _navMeshAgent.speed = 3.5f;
             _attackTimer = 0;
             _animator.SetBool("Attacking", false);
             _animator.SetBool("Running", true);

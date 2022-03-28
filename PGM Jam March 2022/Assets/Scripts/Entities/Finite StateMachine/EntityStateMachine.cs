@@ -43,7 +43,7 @@ public class EntityStateMachine : MonoBehaviour
     }
 
 
-    private void InitializeStates()
+    public void InitializeStates()
     {
         _idle = new Idle(_entity);
         _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent);
@@ -89,6 +89,11 @@ public class EntityStateMachine : MonoBehaviour
             _idle,
             _returnHome,
             () => !IsHome && _idle.UpdateReturnHomeTime());
+        
+        _stateMachine.AddTransition(
+            _patrol,
+            _returnHome,
+            () => !IsHome);
         
         _stateMachine.AddTransition(
             _returnHome,

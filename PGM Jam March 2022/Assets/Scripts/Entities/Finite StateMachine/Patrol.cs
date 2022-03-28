@@ -30,6 +30,8 @@ public class Patrol : IState
     {
         _timeToPatrol = Random.Range(0, 10);
         _navMeshAgent.enabled = true;
+        _patrolTime = _timeToPatrol;
+        _patrolling = false;
     }
 
     public void OnExit()
@@ -39,7 +41,7 @@ public class Patrol : IState
 
     private void PatrolArea()
     {
-        if ((_patrolTime < _timeToPatrol) && _patrolling == false)
+        if (_patrolling == false)
             _patrolTime += Time.deltaTime;
 
         if (_patrolTime >= _timeToPatrol)
@@ -49,7 +51,7 @@ public class Patrol : IState
             _patrolTime = 0;
         }
 
-        if (Vector3.Distance(_entity.transform.position, _newDestination) < 1f)
+        if (Vector3.Distance(_entity.transform.position, _newDestination) < .2f)
         {
             _animator.SetBool("Running", false);
             _patrolling = false;
@@ -58,19 +60,28 @@ public class Patrol : IState
 
     private void TriggerPatrol()
     {
-        var randomX = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
-        var randomZ = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
+        //var randomX = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
+       // var randomZ = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
+
+       Vector3 randomDirection = Random.insideUnitSphere * _entity.HomeRadius;
+       randomDirection += _entity.transform.position;
 #if PatrolDebug
         Debug.Log("X: " + randomX);
         Debug.Log("Y: " + randomX);
 #endif
-        _newDestination = new Vector3(_entity.InitialPosition.x + randomX, _entity.InitialPosition.y,
-            _entity.InitialPosition.z + randomZ);
+
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, _entity.HomeRadius, 1);
+        Vector3 finalPosition = hit.position;
+        _newDestination = finalPosition;
+        //_newDestination = new Vector3(_entity.InitialPosition.x + randomX, _entity.InitialPosition.y,
+        //    _entity.InitialPosition.z + randomZ);
 
 #if PatrolDebug
         Debug.Log("New destination is: " + _newDestination);
 #endif
-        _navMeshAgent.destination = _newDestination;
+        Vector3 newNavDestination;
+        _navMeshAgent.destination = finalPosition;
         _animator.SetBool("Running", true);
         _patrolling = true;
     }

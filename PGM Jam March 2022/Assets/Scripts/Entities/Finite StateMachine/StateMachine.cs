@@ -1,4 +1,4 @@
-//#define TICK_LOG
+#define TICK_LOG
 
 using System;
 using System.Collections.Generic;
