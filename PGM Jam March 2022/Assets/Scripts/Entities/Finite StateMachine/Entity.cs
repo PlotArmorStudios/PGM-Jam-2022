@@ -11,10 +11,10 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float _returnHomeTime;
     [SerializeField] protected float _homeRadius;
     public Rigidbody Rigidbody { get; private set; }
-    public NavMeshAgent NavAgent { get; private set; }
+    public NavMeshAgent NavAgent { get; protected set; }
     public Player PlayerTarget { get; private set; }
     public Animator Animator { get; private set; }
-    public Vector3 InitialPosition { get; private set; }
+    public Vector3 InitialPosition { get; protected set; }
     public EntityStateMachine StateMachine { get; private set; }
     
     //Public access to AI values
@@ -31,7 +31,7 @@ public class Entity : MonoBehaviour
     {
         PlayerTarget = FindObjectOfType<Player>();
         NavAgent = GetComponent<NavMeshAgent>();
-        Animator = GetComponent<Animator>();
+        Animator = GetComponentInChildren<Animator>();
         StateMachine = GetComponent<EntityStateMachine>();
         Rigidbody = GetComponent<Rigidbody>();
         InitialPosition = transform.position;
