@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ToggleComponents : MonoBehaviour
 {
-    public void ToggleOffComponents()
+    public virtual void ToggleOffComponents()
     {
         var behaviors = GetComponents<Behaviour>();
         foreach (var behavior in behaviors)
@@ -15,7 +15,7 @@ public class ToggleComponents : MonoBehaviour
         }
     }
 
-    public void ToggleOnComponents()
+    public virtual void ToggleOnComponents()
     {
         var behaviors = GetComponents<Behaviour>();
         foreach (var behavior in behaviors)

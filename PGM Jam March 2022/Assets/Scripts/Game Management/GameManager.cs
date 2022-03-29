@@ -15,8 +15,9 @@ public class GameManager : MonoBehaviour
     public static event Action OnTurnOnLanterns;
     public static event Action OnTurnOffLanterns;
     public static event Action<int> OnMovePhantom;
-    public static event Action OnTest;
-    
+    public static event Action OnSwitchToPhantomCam;
+    public static event Action OnSwitchToPlayerCam;
+
     public float LanternLightDuration;
     public int RequiredShardsToCollect { get; set; }
 
@@ -24,7 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private List<Transform> phantomMovePoints;
 
     public List<Transform> PhantomMovePoints => phantomMovePoints;
-    
+
     private float _currentLanternTime;
     private bool _timerIsOn;
 
@@ -40,16 +41,15 @@ public class GameManager : MonoBehaviour
         _currentLanternTime = LanternLightDuration;
     }
 
-    public void Test()
-    {
-        OnTest?.Invoke();
-    }
+    public void SwitchPhantomCam() => OnSwitchToPhantomCam?.Invoke();
+    public void SwitchPlayerCam() => OnSwitchToPlayerCam?.Invoke();
+
     public void MovePhantom(int phantomSpawnPoint)
     {
         Debug.Log("Called area to move to event");
         OnMovePhantom?.Invoke(phantomSpawnPoint);
     }
-    
+
     [ContextMenu("Turn ON Lights")]
     public void TurnOnLights() => OnTurnOnLanterns?.Invoke();
 
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 #if DebugShardChecker
             Debug.Log("Turned all lights on");
 #endif
-            
+
             OnTurnOnLanterns?.Invoke();
             NumberOfShards = 0;
             OnResetShards?.Invoke(NumberOfShards);
