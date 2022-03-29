@@ -16,12 +16,14 @@ public class Player : MonoBehaviour
 
     public float _gravity = -9.81f;
     private int _jumpsRemaining;
+    private Animator _animator;
 
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
         _groundCheck = GetComponent<GroundCheck>();
         _jumpsRemaining = _maxJumps;
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -36,6 +38,9 @@ public class Player : MonoBehaviour
         _vertical= Input.GetAxis("Vertical");
 
         Vector3 movement = transform.right * _horizontal + transform.forward * _vertical;
+
+        _animator.SetBool("Walking", movement.magnitude > .1f);
+        
         _characterController.Move(movement * _speed * Time.deltaTime);
 
 
