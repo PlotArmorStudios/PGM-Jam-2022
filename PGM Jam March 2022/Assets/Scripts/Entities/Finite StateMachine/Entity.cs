@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
     [SerializeField] protected float _attackDelay;
     [SerializeField] protected float _returnHomeTime;
     [SerializeField] protected float _homeRadius;
+    [SerializeField] protected float _speed;
+    [SerializeField] protected float _patrolSpeed;
     public Rigidbody Rigidbody { get; private set; }
     public NavMeshAgent NavAgent { get; protected set; }
     public Player PlayerTarget { get; private set; }
@@ -23,6 +25,8 @@ public class Entity : MonoBehaviour
     public float AttackDelay => _attackDelay;
     public float DetectionRadius => _detectionRadius;
     public float AttackRadius => _attackRadius;
+    public float Speed => _speed;
+    public float PatrolSpeed => _patrolSpeed;
 
     private float _attackTimer;
     private bool _canResetNavMesh;
