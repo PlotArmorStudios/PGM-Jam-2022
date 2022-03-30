@@ -23,6 +23,7 @@ public class EntityStateMachine : MonoBehaviour
 
     public IState CurrentState => _stateMachine.CurrentState;
     public bool IsHome => Vector3.Distance(_entity.transform.position, _entity.InitialPosition) < _entity.HomeRadius;
+    public bool CanSeePlayer => _entity.FieldOfView.CanSeePlayer;
     private float DistanceToPlayer => Vector3.Distance(_navMeshAgent.transform.position, _player.transform.position);
     public bool Patrolling => _idle.TogglePatrol();
 
@@ -63,7 +64,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _idle,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius);
+            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer);
 
         _stateMachine.AddTransition(
             _chasePlayer,
