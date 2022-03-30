@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1459952988568763519}
   - component: {fileID: 709703928}
   - component: {fileID: 2986552418548773245}
+  - component: {fileID: 728546052}
   m_Layer: 0
   m_Name: Phantom
   m_TagString: Untagged
@@ -101,12 +102,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f898069064c8d8116070603f61696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 30
-  _attackRadius: 20
+  _detectionRadius: 20
+  _attackRadius: 15
   _attackDelay: 2
   _returnHomeTime: 4
   _homeRadius: 30
-  _speed: 10
+  _speed: 20
   _patrolSpeed: 3.5
 --- !u!135 &1459952988568763519
 SphereCollider:
@@ -145,6 +146,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92b7504b855ff542a3762e6a324a866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &728546052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459952988568763515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa472412cfce95b49bcf7460ec6bbd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 2048
+  Angle: 129
+  Radius: 28.74
+  Player: {fileID: 0}
+  canSeePlayer: 0
 --- !u!1001 &1459952990293114681
 PrefabInstance:
   m_ObjectHideFlags: 0
