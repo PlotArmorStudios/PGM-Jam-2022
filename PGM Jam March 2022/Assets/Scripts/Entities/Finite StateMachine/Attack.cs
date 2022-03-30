@@ -19,7 +19,6 @@ public class Attack : IState
         _player = player;
         _animator = _entity.Animator;
         _attackTimer = 4.5f;
-
     }
 
     public void Tick()
@@ -48,13 +47,8 @@ public class Attack : IState
 
         if (_attackTimer > _attackDelay)
         {
-            int randomAttack = Random.Range(1, 3);
-            _animator.SetInteger("Atk", randomAttack);
+            _animator.SetTrigger("Attack");
             _attackTimer = 0;
-        }
-        else
-        {
-            _animator.SetInteger("Atk", 0);
         }
     }
 }

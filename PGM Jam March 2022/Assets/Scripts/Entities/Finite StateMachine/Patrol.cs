@@ -13,12 +13,14 @@ public class Patrol : IState
     private float _timeToPatrol;
     private Vector3 _newDestination;
     private bool _patrolling;
+    private float _patrolSpeed;
 
     public Patrol(Entity entity)
     {
         _entity = entity;
         _navMeshAgent = entity.NavAgent;
         _animator = entity.Animator;
+        _patrolSpeed = _entity.PatrolSpeed;
     }
 
     public void Tick()
@@ -30,6 +32,7 @@ public class Patrol : IState
     {
         _timeToPatrol = Random.Range(0, 10);
         _navMeshAgent.enabled = true;
+        _navMeshAgent.speed = _patrolSpeed;
         _patrolTime = _timeToPatrol;
         _patrolling = false;
     }
@@ -60,9 +63,6 @@ public class Patrol : IState
 
     private void TriggerPatrol()
     {
-        //var randomX = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
-       // var randomZ = UnityEngine.Random.Range(-_entity.HomeRadius, _entity.HomeRadius + 1);
-
        Vector3 randomDirection = Random.insideUnitSphere * _entity.HomeRadius;
        randomDirection += _entity.transform.position;
 #if PatrolDebug
@@ -74,13 +74,10 @@ public class Patrol : IState
         NavMesh.SamplePosition(randomDirection, out hit, _entity.HomeRadius, 1);
         Vector3 finalPosition = hit.position;
         _newDestination = finalPosition;
-        //_newDestination = new Vector3(_entity.InitialPosition.x + randomX, _entity.InitialPosition.y,
-        //    _entity.InitialPosition.z + randomZ);
 
 #if PatrolDebug
         Debug.Log("New destination is: " + _newDestination);
 #endif
-        Vector3 newNavDestination;
         _navMeshAgent.destination = finalPosition;
         _animator.SetBool("Running", true);
         _patrolling = true;

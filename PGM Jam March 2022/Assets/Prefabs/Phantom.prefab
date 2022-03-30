@@ -101,11 +101,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82f898069064c8d8116070603f61696, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 20
-  _attackRadius: 0
-  _attackDelay: 0
+  _detectionRadius: 30
+  _attackRadius: 20
+  _attackDelay: 2
   _returnHomeTime: 4
   _homeRadius: 30
+  _speed: 10
+  _patrolSpeed: 3.5
 --- !u!135 &1459952988568763519
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -472,8 +474,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a88cfb3970bb0d34ba9f5532f317a852, type: 3}
+--- !u!1 &1766433958561415784 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a88cfb3970bb0d34ba9f5532f317a852, type: 3}
+  m_PrefabInstance: {fileID: 1459952990293114681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1425515721899497682 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a88cfb3970bb0d34ba9f5532f317a852, type: 3}
   m_PrefabInstance: {fileID: 1459952990293114681}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1416668544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766433958561415784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae94983f237df342a154517a04ed6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackRange: 20
+  _attackDamage: 25

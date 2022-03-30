@@ -8,12 +8,14 @@ public class ChasePlayer : IState
     private float _attackTimer;
     private Animator _animator;
     private Entity _entity;
+    private float _speed;
 
     public ChasePlayer(Entity entity, Player player, NavMeshAgent navMeshAgent)
     {
         _entity = entity;
         _player = player;
-
+        _speed = _entity.Speed;
+        
         _navMeshAgent = _entity.NavAgent;
         _animator = _entity.Animator;
     }
@@ -39,7 +41,7 @@ public class ChasePlayer : IState
         if (_player)
         {
             _navMeshAgent.isStopped = false;
-            _navMeshAgent.speed = 3.5f;
+            _navMeshAgent.speed = _speed;
             _attackTimer = 0;
             _animator.SetBool("Attacking", false);
             _animator.SetBool("Running", true);

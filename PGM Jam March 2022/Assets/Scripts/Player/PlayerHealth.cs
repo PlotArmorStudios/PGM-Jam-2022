@@ -18,6 +18,9 @@ public class PlayerHealth : MonoBehaviour
         _globalVolume = GetComponentInChildren<Volume>();
     }
 
+    private void OnEnable() => PhantomAttack.OnPhantomAttack += TakeDamage;
+    private void OnDisable() => PhantomAttack.OnPhantomAttack -= TakeDamage;
+
     private void Start()
     {
         _currentHealth = _maxHealth;
