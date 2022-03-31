@@ -11,17 +11,22 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueTrigger _dialogueTrigger1, _dialogueTrigger2;
 
     private bool _playerInRange;
-    private bool _dialogueOpen;
+    private bool _dialogueRegistered;
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F) && _playerInRange)
         {
-            if (CheckShards())
-            {
-                //turn on this NPC's particular lantern if amount of shards is enough
-                _lanternToActivate.TurnOn();
-            }
+            VerifyShardsCollected();
+        }
+    }
+
+    private void VerifyShardsCollected()
+    {
+        if (CheckShards())
+        {
+            //turn on this NPC's particular lantern if amount of shards is enough
+            _lanternToActivate.TurnOn();
         }
     }
 
@@ -31,8 +36,9 @@ public class NPC : MonoBehaviour
     }
     private void TriggerDialogue()
     {
-        //Debug.Log("Trigger dialogue/cutscene");
-        //DialogueManager.Instance.TriggerDialogue();
+        Debug.Log("Trigger dialogue/cutscene");
+        DialogueManager.Instance.TriggerDialogue();
+        GameManager.Instance.DeactivatePlayer();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,10 +50,11 @@ public class NPC : MonoBehaviour
         
         GameManager.Instance.RequiredShardsToCollect = _requiredNumberOfShards;
         
-        if (!_dialogueOpen)
+        //Register dialogue if this this first time player walked up to this npc
+        if (!_dialogueRegistered)
         {
             DialogueManager.Instance.RegisterDialogueTrigger(_dialogueTrigger1);
-            _dialogueOpen = true;
+            _dialogueRegistered = true;
         }
     }
 
