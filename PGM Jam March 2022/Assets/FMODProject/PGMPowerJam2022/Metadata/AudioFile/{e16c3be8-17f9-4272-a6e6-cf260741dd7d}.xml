@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{e16c3be8-17f9-4272-a6e6-cf260741dd7d}">
+		<property name="assetPath">
+			<value>alma of the forest ambient.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>402.19782312925167</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a1af79c7-38e6-4153-bf8a-7c7b1489c2fc}</destination>
+		</relationship>
+	</object>
+</objects>
