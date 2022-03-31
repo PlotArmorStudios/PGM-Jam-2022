@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public static event Action<int> OnMovePhantom;
     public static event Action OnSwitchToPhantomCam;
     public static event Action OnSwitchToPlayerCam;
+    public static event Action OnDeactivatePlayerControl;
+    public static event Action OnActivatePlayerControl;
 
     public float LanternLightDuration;
     public int RequiredShardsToCollect { get; set; }
@@ -100,5 +102,14 @@ public class GameManager : MonoBehaviour
 #endif
             return false;
         }
+    }
+
+    public void DeactivatePlayer()
+    {
+        OnDeactivatePlayerControl?.Invoke();
+    }
+    public void ActivatePlayer()
+    {
+        OnActivatePlayerControl?.Invoke();
     }
 }

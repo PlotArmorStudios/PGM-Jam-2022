@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     public float _gravity = -9.81f;
     private int _jumpsRemaining;
     private Animator _animator;
+    public PlayerHealth Health { get; set; }
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
         _groundCheck = GetComponent<GroundCheck>();
         _jumpsRemaining = _maxJumps;
         _animator = GetComponentInChildren<Animator>();
+        Health = GetComponent<PlayerHealth>();
     }
 
     private void Update()
