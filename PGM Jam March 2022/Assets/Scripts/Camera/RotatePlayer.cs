@@ -18,8 +18,17 @@ public class RotatePlayer : MonoBehaviour
         _rotationIsActive = true;
     }
 
-    private void OnEnable() => GameManager.OnDeactivatePlayerControl += SetRotationOff;
-    private void OnDisable() => GameManager.OnDeactivatePlayerControl -= SetRotationOff;
+    private void OnEnable()
+    {
+        GameManager.OnDeactivatePlayerControl += SetRotationOff;
+        GameManager.OnActivatePlayerControl += SetRotationOn;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnDeactivatePlayerControl -= SetRotationOff;
+        GameManager.OnActivatePlayerControl -= SetRotationOn;
+    }
 
     void Update()
     {
@@ -32,5 +41,10 @@ public class RotatePlayer : MonoBehaviour
     public void SetRotationOff()
     {
         _rotationIsActive = false;
+    }
+
+    public void SetRotationOn()
+    {
+        _rotationIsActive = true;
     }
 }

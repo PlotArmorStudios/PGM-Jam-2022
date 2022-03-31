@@ -39,6 +39,7 @@ public class NPC : MonoBehaviour
     {
         var player = other.GetComponent<Player>();
         if (!player) return;
+        
         _playerInRange = true;
         
         GameManager.Instance.RequiredShardsToCollect = _requiredNumberOfShards;
