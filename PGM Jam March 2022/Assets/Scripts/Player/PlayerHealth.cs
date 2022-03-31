@@ -1,17 +1,22 @@
 #define DebugTakeDamage
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class PlayerHealth : MonoBehaviour
 {
     public static event Action OnTakeDamage;
+    public static event Action OnPlayerDeath;
 
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _healRate = 5f;
 
     private Volume _globalVolume;
     private float _currentHealth;
+    private Animator _animator;
+    public bool IsAlive { get; set; }
 
     private void OnValidate()
     {
@@ -24,6 +29,8 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         _currentHealth = _maxHealth;
+        _animator = GetComponentInChildren<Animator>();
+        IsAlive = true;
     }
 
     private void Update()
@@ -41,6 +48,27 @@ public class PlayerHealth : MonoBehaviour
 #endif
         _currentHealth -= damage;
         OnTakeDamage?.Invoke();
+
+        if (_currentHealth <= 0) Die();
+    }
+
+    private void Die()
+    {
+        OnPlayerDeath?.Invoke();
+        IsAlive = false;
+        _animator.SetTrigger("Die");
+        GameManager.Instance.DeactivatePlayer();
+        StartCoroutine(LoadLastCheckPoint());
+    }
+
+    private IEnumerator LoadLastCheckPoint()
+    {
+        yield return new WaitForSeconds(3f);
+        transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"),
+            PlayerPrefs.GetFloat("PlayerZ"));
+        _animator.SetTrigger("Revive");
+        IsAlive = true;
+        GameManager.Instance.ActivatePlayer();
     }
 
     [ContextMenu("Take Damage Test")]
