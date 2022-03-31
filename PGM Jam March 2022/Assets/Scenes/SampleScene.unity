@@ -6285,6 +6285,7 @@ GameObject:
   - component: {fileID: 963194232}
   - component: {fileID: 963194233}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194235}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6476,6 +6477,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mouseSensitivity: 300
   _rotationIsActive: 0
+--- !u!114 &963194235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67469f083b55e634c9b2bc98f622855f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToggleCamInput: 1
 --- !u!1001 &995289942
 PrefabInstance:
   m_ObjectHideFlags: 0
