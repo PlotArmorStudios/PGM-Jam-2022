@@ -67,6 +67,7 @@ public class PlayerHealth : MonoBehaviour
         transform.position = new Vector3(PlayerPrefs.GetFloat("PlayerX"), PlayerPrefs.GetFloat("PlayerY"),
             PlayerPrefs.GetFloat("PlayerZ"));
         _animator.SetTrigger("Revive");
+        _currentHealth = _maxHealth;
         IsAlive = true;
         GameManager.Instance.ActivatePlayer();
     }

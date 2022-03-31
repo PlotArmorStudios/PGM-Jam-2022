@@ -87,6 +87,11 @@ public class EntityStateMachine : MonoBehaviour
             () => DistanceToPlayer > _entity.AttackRadius);
         
         _stateMachine.AddTransition(
+            _attack,
+            _idle,
+            () => DistanceToPlayer > _entity.AttackRadius || !_entity.PlayerTarget.Health.IsAlive);
+        
+        _stateMachine.AddTransition(
             _idle,
             _returnHome,
             () => !IsHome && _idle.UpdateReturnHomeTime());
