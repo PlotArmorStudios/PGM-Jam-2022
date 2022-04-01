@@ -1,0 +1,224 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3470812206923342953
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8964035303964450445, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Name
+      value: OutroScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: "And so, through Alma\u2019s actions, the soul of the forest was restored.
+        The chipmunks and the bees, the snakes and the birds in the trees, even the
+        gentle wind is said to whisper about her and what she did to restore their
+        woodland refuge to a place of peace and harmony."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: Of course, little is said at all about the phantom today. Though destructive
+        and frightening in his own right, his presence has been fully eradicated,
+        the power of his hatred no match for the bravery of one young woman.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: "Some say her success was ensured through the power of love\u2014the
+        daemons\u2019 devotion to the forest helped guide her way, after all."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: Others say it was her willpower that did it, as so many others might
+        have turned away and chosen not to risk their lives for the sake of these
+        woods, but Alma chose to press on.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "It\u2019s a debate people love having, because no one is really trying
+        to win. The conversation itself is but a celebration of triumph and perseverance,
+        an acknowledgment of the power within each of us to make positive change,
+        so long as we\u2019re brave enough to try."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[7]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[8]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[9]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[10]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[11]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[12]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[13]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[14]
+      value: "I am not mistaken. That thing you carry, power it in the Soul Lantern
+        while it\u2019s ssstill lit. Use its light to keep you sssafe as you head
+        down the path."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d780b486f119394b96508ff1a77224a, type: 3}

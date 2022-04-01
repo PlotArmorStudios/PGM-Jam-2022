@@ -55,4 +55,8 @@ public class DialogueSection : MonoBehaviour
             nameAnim.Play("NameFadeOut", -1, 0f);
         }
     }
+    public void SetCharacterName(string name)
+    {
+        characterName[0] = name;
+    }
 }

@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1963120820783231655
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8964035303964450445, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_Name
+      value: IntroScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Alma has entered the dark forest at the edge of her town for the very
+        first time. She saw something glowing out there among the trees, and her
+        curiosity got the best of her, so equipped with her trusty walking stick,
+        she decided to investigate.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "But the light which seemed so close before somehow remained just out
+        of reach, drawing her deeper and deeper into the woods, and now it has grown
+        dark and she\u2019s lost."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: She seeks refuge from the heavy darkness by a magical kind of Lantern
+        that she assumes must be what lured her in, as it emits a warm, safe glow
+        that stands at a stark contrast to the cold night that has fallen around
+        her.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "As the Lantern light starts to flicker, Alma begins to worry about
+        all the frightening tales she\u2019s heard about these woods."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "No one she knows has ever entered the forest unless they had to, and
+        never at night. She\u2019d like to think she\u2019s outgrown silly ghost
+        stories, but could they be true?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[4]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: characterName.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930550, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -271
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
