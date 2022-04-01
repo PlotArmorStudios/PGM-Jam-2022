@@ -24,6 +24,9 @@ public class DialogueSection : MonoBehaviour
         numOfSentences = sentences.Length;
         continueButton.onClick.AddListener(ContinueButtonPressed);
         DisplayNextSen();
+        GameManager.Instance.DeactivatePlayer();
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     private int currentSentenceIndex = 0;
@@ -32,6 +35,7 @@ public class DialogueSection : MonoBehaviour
         if (currentSentenceIndex >= sentences.Length)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
+            GameManager.Instance.ActivatePlayer();
             return;
         }
         dialogue.Play("TextFadeIn", -1, 0f);
