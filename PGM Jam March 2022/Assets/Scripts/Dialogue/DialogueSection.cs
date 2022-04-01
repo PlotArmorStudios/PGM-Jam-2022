@@ -30,7 +30,7 @@ public class DialogueSection : MonoBehaviour
     private int currentSentenceIndex = 0;
     private void DisplayNextSen()
     {
-        if (currentSentenceIndex >= sentences.Length)
+        if (currentSentenceIndex >= numOfSentences)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
             GameManager.Instance.ActivatePlayer();
