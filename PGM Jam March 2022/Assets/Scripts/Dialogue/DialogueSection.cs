@@ -21,12 +21,10 @@ public class DialogueSection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.DeactivatePlayer();
         numOfSentences = sentences.Length;
         continueButton.onClick.AddListener(ContinueButtonPressed);
         DisplayNextSen();
-        GameManager.Instance.DeactivatePlayer();
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 
     private int currentSentenceIndex = 0;
