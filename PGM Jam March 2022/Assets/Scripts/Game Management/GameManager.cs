@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     public static event Action OnActivatePlayerControl;
 
     public float LanternLightDuration;
-    public int RequiredShardsToCollect { get; set; }
+    public int RequiredShardsToCollect;
 
     public static GameManager Instance;
     [SerializeField] private List<Transform> phantomMovePoints;

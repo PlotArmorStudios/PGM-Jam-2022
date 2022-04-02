@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7874084143635099711}
   - component: {fileID: 7874084143635099699}
   - component: {fileID: 7874084143635099698}
-  - component: {fileID: 7874084143635099697}
-  - component: {fileID: 7874084143635099696}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -49,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lanternToActivate: {fileID: 0}
   _requiredNumberOfShards: 4
-  _dialogueTrigger1: {fileID: 7874084143635099697}
-  _dialogueTrigger2: {fileID: 7874084143635099696}
+  _dialogueTrigger1: {fileID: 0}
+  _dialogueTrigger2: {fileID: 0}
 --- !u!135 &7874084143635099698
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64,42 +62,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 6.37
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7874084143635099697
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874084143635099710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4706f54cb1f9145982608efbc20803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue:
-    Names:
-    - Ormr
-    Sentences:
-    - You got the stuff?
-    NumberOfContinues: 
---- !u!114 &7874084143635099696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874084143635099710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4706f54cb1f9145982608efbc20803, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Dialogue:
-    Names:
-    - Ormr
-    Sentences:
-    - That's cap.
-    NumberOfContinues: 
 --- !u!1001 &7874084143310429006
 PrefabInstance:
   m_ObjectHideFlags: 0

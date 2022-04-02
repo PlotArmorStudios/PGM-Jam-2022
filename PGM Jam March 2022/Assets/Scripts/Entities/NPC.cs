@@ -8,8 +8,6 @@ public class NPC : MonoBehaviour
     [SerializeField] private Lantern _lanternToActivate;
     [SerializeField] private int _requiredNumberOfShards;
     
-    [SerializeField] private DialogueTrigger _dialogueTrigger1, _dialogueTrigger2;
-
     private bool _playerInRange;
     private bool _dialogueRegistered;
 
@@ -17,7 +15,7 @@ public class NPC : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && _playerInRange)
         {
-            VerifyShardsCollected();
+            //VerifyShardsCollected();
         }
     }
 
@@ -53,7 +51,6 @@ public class NPC : MonoBehaviour
         //Register dialogue if this this first time player walked up to this npc
         if (!_dialogueRegistered)
         {
-            DialogueManager.Instance.RegisterDialogueTrigger(_dialogueTrigger1);
             _dialogueRegistered = true;
         }
     }
