@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +7,20 @@ using TMPro;
 
 public class DialogueSection : MonoBehaviour
 {
+    public static event Action<string> OnLoadScene;
+
     [SerializeField] [TextArea(7, 10)] private string[] sentences;
-    [Tooltip("Character Name should be the same number of elements as Sentences array above")]
-    [SerializeField] private string[] characterName;
+
+    [Tooltip("Character Name should be the same number of elements as Sentences array above")] [SerializeField]
+    private string[] characterName;
+
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private Animator dialogueSection;
     [SerializeField] private Animator dialogue;
     [SerializeField] private Animator nameAnim;
     [SerializeField] private Button continueButton;
+
     private string currentName = "";
     private int numOfSentences;
 
@@ -28,20 +34,25 @@ public class DialogueSection : MonoBehaviour
     }
 
     private int currentSentenceIndex = 0;
+
     private void DisplayNextSen()
     {
         if (currentSentenceIndex >= sentences.Length)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
+            OnLoadScene?.Invoke("Level 1");
+            
             GameManager.Instance.ActivatePlayer();
             return;
         }
+
         dialogue.Play("TextFadeIn", -1, 0f);
         dialogueText.text = sentences[currentSentenceIndex];
         if (!characterName[currentSentenceIndex].Equals(currentName))
         {
             nameAnim.Play("NameFadeIn", -1, 0f);
         }
+
         currentName = characterName[currentSentenceIndex];
         nameText.text = currentName;
 
@@ -57,6 +68,7 @@ public class DialogueSection : MonoBehaviour
             nameAnim.Play("NameFadeOut", -1, 0f);
         }
     }
+
     public void SetCharacterName(string name)
     {
         characterName[0] = name;
