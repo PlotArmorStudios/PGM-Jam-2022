@@ -37,7 +37,7 @@ public class DialogueSection : MonoBehaviour
 
     private void DisplayNextSen()
     {
-        if (currentSentenceIndex >= sentences.Length)
+        if (currentSentenceIndex >= numOfSentences)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
             OnLoadScene?.Invoke("Level 1");
