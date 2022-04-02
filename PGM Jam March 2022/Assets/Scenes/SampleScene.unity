@@ -1672,6 +1672,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8220285737023212204, guid: 7ff486cf836dfd745910e3387ca304ad, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ff486cf836dfd745910e3387ca304ad, type: 3}
 --- !u!1 &163462950
@@ -9899,11 +9903,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064731561}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2072762929 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5914541050572919613, guid: 7ff486cf836dfd745910e3387ca304ad, type: 3}
-  m_PrefabInstance: {fileID: 158500869}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2075217719
 GameObject:
   m_ObjectHideFlags: 0
@@ -10305,6 +10304,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72cada15dd8eb364698a95c87dbea9d8, type: 3}
+--- !u!1 &4438882976623450768 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4438882977159401145, guid: 72cada15dd8eb364698a95c87dbea9d8, type: 3}
+  m_PrefabInstance: {fileID: 4438882976623450767}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4438882976623450769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4438882976623450768}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7, y: 7, z: 7}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5936888948158749312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10555,6 +10572,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8405723406310962205, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8405723407444750163, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -10578,6 +10599,10 @@ PrefabInstance:
     - target: {fileID: 8405723407444750163, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8405723407826508345, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
@@ -10656,7 +10681,7 @@ PrefabInstance:
     - target: {fileID: 9074503919554478400, guid: 8426cfa969c9f8345b5d5aba6f44a456, type: 3}
       propertyPath: dialogueGameObject
       value: 
-      objectReference: {fileID: 2072762929}
+      objectReference: {fileID: 0}
     - target: {fileID: 9074503919554478403, guid: 8426cfa969c9f8345b5d5aba6f44a456, type: 3}
       propertyPath: m_Name
       value: TriggerBox

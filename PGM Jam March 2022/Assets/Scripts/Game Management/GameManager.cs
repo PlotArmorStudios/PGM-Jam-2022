@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public int NumberOfShards { get; set; }
     public float CurrentLanternTime => _currentLanternTime;
 
+    public bool Paused { get; set; }
     void Awake() => Instance = this;
 
     private void OnEnable()
@@ -112,4 +113,17 @@ public class GameManager : MonoBehaviour
     {
         OnActivatePlayerControl?.Invoke();
     }
+
+    public void UnpauseGame()
+    {
+        Time.timeScale = 1f;
+        Paused = false;
+    }
+    
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        Paused = true;
+    }
+
 }

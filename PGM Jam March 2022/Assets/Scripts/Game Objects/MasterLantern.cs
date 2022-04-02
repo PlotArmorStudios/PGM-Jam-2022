@@ -5,10 +5,13 @@ public class MasterLantern : Lantern
 {
     private ParticleSystem _particleSystem;
     private bool _playerInRange;
-
+    private SceneLoader _sceneLoader;
+    
     private void Start()
     {
         _particleSystem = GetComponent<ParticleSystem>();
+        TurnOff();
+        _sceneLoader = GetComponent<SceneLoader>(); 
     }
 
     private void Update()
@@ -19,9 +22,12 @@ public class MasterLantern : Lantern
         }
     }
 
+    [ContextMenu("Purify")]
     private void Purify()
     {
         _particleSystem.Play();
+        TurnOn();
+        _sceneLoader.LoadScene("OutroScene");
     }
 
     private void OnTriggerEnter(Collider other)
