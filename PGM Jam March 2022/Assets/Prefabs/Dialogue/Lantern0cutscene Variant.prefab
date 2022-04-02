@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: m_Name
-      value: Lantern0cutscene
+      value: Lantern0cutscene Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: m_IsActive
@@ -464,30 +464,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - You have done it, asss I knew you would.
-  - I don't understand. Who are you? You never answered me.
-  - I am one of the ssspirits of the forest. A daemon. There are but a few of us
-    left.
-  - It is our chosssen obligation to protect these woods. Our souls to remain here
-    ssstanding guard, though our bodies have long since decomposed.
-  - Why? Why not just rest? Why stay in the forest all this time?
-  - In life as in death, I love these woods right down to the most ssslithery sssnake
-    beneath its brambles. Beautiful, misunderstood creatures they are.
-  - Even the one that fatally bit me has a place in my heart. It only ssstruck out
-    due the discordance created by the phantom's presence, after all. I would sssave
-    these woods myself if I could, but it must be you.
-  - The creatures of the forest cannot ressst until the phantom is gone. Use what
-    I have taught you and do not delay on your journey to power the next lanterns.
-  - If you do not make it in time, the sssoul of the forest will be lost forever.
+  - "Alma, you\u2019re here. We\u2019ve been waiting. Time isss almost up."
+  - What? Who are you? How do you know my name?
+  - All the daemons of the foressst know your name. We have been doing our best to
+    keep the sssoul of these woods alive for generations now, but you can sssee now
+    its light is weak and flickering, about to give out. You are the only one with
+    the power to restore it.
+  - " Me? I think you must be mistaken\u2014"
+  - "I am not mistaken. That thing you carry, power it in the Soul Lantern while
+    it\u2019s ssstill lit. Use its light to keep you sssafe as you head down the
+    path. Gather the lights you sssee along the way and you\u2019ll be able to light
+    the next Soul Lantern. This lantern is very near the next. There is not much
+    danger in moving between them, but soon, danger will sssuround you, yesss"
+  - What if I don't want to light the lanterns? What if I just want to go home?
+  - Then that isss your choice. In that case, the foressst and the daemons within
+    it will be lossst forever to the corrupting force of the phantom, and its creatures
+    will be condemned to sssuffer for eternity. Ensure you understand my instructions,
+    and make your decisssion carefully, as the fate of this forest is in your handsss.
   characterName:
   - Ormr
   - Alma
   - Ormr
+  - Alma
   - Ormr
   - Alma
   - Ormr
-  - Ormr
-  - Ormr
+  - Alma
   - Ormr
   nameText: {fileID: 3357486684789628848}
   dialogueText: {fileID: 3357486683198139579}
