@@ -10,17 +10,14 @@ public class ToggleComponents : MonoBehaviour
         var behaviors = GetComponents<Behaviour>();
         foreach (var behavior in behaviors)
         {
-            if (behavior != this)
-                behavior.enabled = false;
+            if (behavior is Player) behavior.GetComponent<Player>().Animator.SetBool("Walking", false);
+            if (behavior != this) behavior.enabled = false;
         }
     }
 
     public virtual void ToggleOnComponents()
     {
         var behaviors = GetComponents<Behaviour>();
-        foreach (var behavior in behaviors)
-        {
-            behavior.enabled = true;
-        }
+        foreach (var behavior in behaviors) behavior.enabled = true;
     }
 }

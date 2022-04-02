@@ -20,6 +20,8 @@ public class DialogueSection : MonoBehaviour
     [SerializeField] private Animator dialogue;
     [SerializeField] private Animator nameAnim;
     [SerializeField] private Button continueButton;
+    [SerializeField] private SceneLoader _sceneLoader;
+    [SerializeField] private string _sceneToLoad;
 
     private string currentName = "";
     private int numOfSentences;
@@ -27,7 +29,8 @@ public class DialogueSection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.DeactivatePlayer();
+        if (GameManager.Instance)
+            GameManager.Instance.DeactivatePlayer();
         numOfSentences = sentences.Length;
         continueButton.onClick.AddListener(ContinueButtonPressed);
         DisplayNextSen();
@@ -40,9 +43,10 @@ public class DialogueSection : MonoBehaviour
         if (currentSentenceIndex >= numOfSentences)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
-            OnLoadScene?.Invoke("Level 1");
             
-            GameManager.Instance.ActivatePlayer();
+            if (_sceneLoader) _sceneLoader.LoadScene(_sceneToLoad);
+            if (GameManager.Instance) GameManager.Instance.ActivatePlayer();
+
             return;
         }
 
