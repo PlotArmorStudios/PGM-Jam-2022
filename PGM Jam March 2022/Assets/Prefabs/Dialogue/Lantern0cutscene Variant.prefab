@@ -497,6 +497,10 @@ MonoBehaviour:
   dialogue: {fileID: 2127312842190992292}
   nameAnim: {fileID: 3357486684789628852}
   continueButton: {fileID: 3357486684457446267}
+  _resetDialogueOnEnable: 0
+  _sceneLoader: {fileID: 0}
+  _sceneToLoad: 
+  _lanternToActivate: {fileID: 0}
 --- !u!114 &1757739649
 MonoBehaviour:
   m_ObjectHideFlags: 0

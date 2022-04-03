@@ -8,7 +8,7 @@ public class CursorLockToggle : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
         }
