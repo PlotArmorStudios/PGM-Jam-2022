@@ -21,6 +21,8 @@ public class DialogueSection : MonoBehaviour
     [SerializeField] private Animator nameAnim;
     [SerializeField] private Button continueButton;
     [SerializeField] private bool _resetDialogueOnEnable;
+    [SerializeField] private bool _setRequiredNumberOfShards;
+    [SerializeField] private int _requiredNumberOfShards;
     [SerializeField] private SceneLoader _sceneLoader;
     [SerializeField] private string _sceneToLoad;
     [SerializeField] private Lantern _lanternToActivate;
@@ -54,9 +56,14 @@ public class DialogueSection : MonoBehaviour
             if (_sceneLoader) _sceneLoader.LoadScene(_sceneToLoad);
             if (GameManager.Instance) GameManager.Instance.ActivatePlayer();
             if (_lanternToActivate) _lanternToActivate.TurnOn();
-            
+            if (_setRequiredNumberOfShards)
+            {
+                GameManager.Instance.RequiredShardsToCollect = _requiredNumberOfShards;
+                GameManager.Instance.ResetShards();
+            }
+
             OnEndDialogue?.Invoke();
-            
+
             return;
         }
 

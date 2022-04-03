@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class TriggerBox : MonoBehaviour
 {
-    [SerializeField] protected GameObject NPC;
+    [SerializeField] protected NPC NPC;
     [SerializeField] protected Transform NPCSpawnLocation;
     [SerializeField] protected GameObject dialogueGameObject;
     [SerializeField] private GameObject collectMoreShards;
@@ -34,7 +34,8 @@ public class TriggerBox : MonoBehaviour
         if (!player) return;
 
         _vCam.Priority = 20;
-        if (GameManager.Instance.CheckShardsCollected())
+        
+        if (GameManager.Instance.RequiredShardsToCollect == GameManager.Instance.NumberOfShards)
         {
             dialogueGameObject.SetActive(true);
             NPC.transform.position = NPCSpawnLocation.position;

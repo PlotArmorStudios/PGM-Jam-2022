@@ -6,12 +6,12 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public static event Action<int> OnCollectShard;
     public static event Action<int> OnResetShards;
-    public static event Action OnWarnTooLow;
     public static event Action OnTurnOnLanterns;
     public static event Action OnTurnOffLanterns;
     public static event Action<int> OnMovePhantom;
@@ -24,9 +24,11 @@ public class GameManager : MonoBehaviour
     public int RequiredShardsToCollect;
 
     public static GameManager Instance;
-    [SerializeField] private List<Transform> phantomMovePoints;
 
-    public List<Transform> PhantomMovePoints => phantomMovePoints;
+    [SerializeField] private List<Transform> _phantomMovePoints;
+    [SerializeField] private GameObject _pauseUI;
+
+    public List<Transform> PhantomMovePoints => _phantomMovePoints;
 
     private float _currentLanternTime;
     private bool _timerIsOn;
@@ -65,16 +67,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (_timerIsOn) _currentLanternTime -= Time.deltaTime;
-
-        if (_currentLanternTime <= 0)
-        {
-#if DebugLanternTimer
-            Debug.Log("Lantern time ran out");
-#endif
-            OnTurnOffLanterns?.Invoke();
-            _currentLanternTime = LanternLightDuration;
-        }
+        if (Input.GetKeyDown(KeyCode.Escape) && Input.GetKeyDown(KeyCode.P))
+            if (Paused) UnpauseGame();
+            else PauseGame();
     }
 
     public void CollectShard()
@@ -83,32 +78,17 @@ public class GameManager : MonoBehaviour
         OnCollectShard?.Invoke(NumberOfShards);
     }
 
-    public bool CheckShardsCollected()
+    public void ResetShards()
     {
-        if (NumberOfShards >= RequiredShardsToCollect)
-        {
-#if DebugShardChecker
-            Debug.Log("Turned all lights on");
-#endif
-
-            OnTurnOnLanterns?.Invoke();
-            NumberOfShards = 0;
-            OnResetShards?.Invoke(NumberOfShards);
-            return true;
-        }
-        else
-        {
-#if DebugShardChecker
-            Debug.Log("Not enough shards");
-#endif
-            return false;
-        }
+        NumberOfShards = 0;
+        OnResetShards?.Invoke(NumberOfShards);
     }
 
     public void DeactivatePlayer()
     {
         OnDeactivatePlayerControl?.Invoke();
     }
+
     public void ActivatePlayer()
     {
         OnActivatePlayerControl?.Invoke();
@@ -116,14 +96,15 @@ public class GameManager : MonoBehaviour
 
     public void UnpauseGame()
     {
+        ActivatePlayer();
         Time.timeScale = 1f;
         Paused = false;
     }
-    
+
     public void PauseGame()
     {
+        DeactivatePlayer();
         Time.timeScale = 0f;
         Paused = true;
     }
-
 }
