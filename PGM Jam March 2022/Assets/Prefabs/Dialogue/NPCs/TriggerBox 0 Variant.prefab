@@ -65,7 +65,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6142803902739765151, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
       propertyPath: m_Name
-      value: TriggerBox 0
+      value: TriggerBox 0 Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6142803904306338625, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142803904306338625, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142803904306338625, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6142803902739765148, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+--- !u!1 &1855846969638290132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6142803902739765151, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+  m_PrefabInstance: {fileID: 5548106429147731275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1855846967987834378 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6142803904306338625, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
+  m_PrefabInstance: {fileID: 5548106429147731275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5231577731617874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855846969638290132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4ffa943b3d44db596e50834a6dd4818, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC: {fileID: 0}
+  NPCSpawnLocation: {fileID: 1855846967987834378}
+  dialogueGameObject: {fileID: 0}
+  collectMoreShards: {fileID: 0}
+  NPCName: Ormr

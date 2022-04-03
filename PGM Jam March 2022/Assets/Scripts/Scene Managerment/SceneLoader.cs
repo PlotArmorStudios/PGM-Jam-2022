@@ -12,9 +12,6 @@ public class SceneLoader : MonoBehaviour
     [SerializeField] private bool _transitionToggle;
     [SerializeField] private float _transitionSpeed = 1f;
 
-    private void OnEnable() => DialogueSection.OnLoadScene += LoadScene;
-    private void OnDisable() => DialogueSection.OnLoadScene -= LoadScene;
-
     public void LoadScene()
     {
         if (_transitionToggle)
