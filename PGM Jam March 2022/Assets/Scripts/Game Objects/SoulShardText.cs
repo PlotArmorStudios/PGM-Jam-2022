@@ -9,6 +9,7 @@ public class SoulShardText : MonoBehaviour
     private void Start()
     {
         _text = GetComponent<TMP_Text>();
+        _text.text = "Shards " + GameManager.Instance.NumberOfShards + "/" + GameManager.Instance.RequiredShardsToCollect;
     }
 
     private void OnEnable()
@@ -28,7 +29,7 @@ public class SoulShardText : MonoBehaviour
 #if DebugShardText
         Debug.Log("Shard Text Updated");
 #endif
-        _text.text = "Shards = " + shardAmount.ToString();
+        _text.text = "Shards " + GameManager.Instance.NumberOfShards + "/" + GameManager.Instance.RequiredShardsToCollect;
     }
 
     private void ResetShards(int shardAmount)
