@@ -5,10 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using FMODUnity;
 
 public class SoulShard : MonoBehaviour
 {
     [SerializeField] private List<Light> _lights;
+
+    [SerializeField]
+    [EventRef]
+    private string _shardEventPath;
 
     private void OnValidate()
     {
@@ -37,5 +42,6 @@ public class SoulShard : MonoBehaviour
 #endif
         GameManager.Instance.CollectShard();
         gameObject.SetActive(false);
+        RuntimeManager.PlayOneShotAttached(_shardEventPath, gameObject);
     }
 }

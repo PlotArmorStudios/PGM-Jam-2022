@@ -5135,3 +5135,4 @@ MonoBehaviour:
   _lights:
   - {fileID: 2210491526138502140}
   - {fileID: 2210491526189298495}
+  _shardEventPath: event:/Shard Collect

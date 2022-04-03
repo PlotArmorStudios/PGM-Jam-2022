@@ -1,5 +1,53 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9072641924986594568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/test
+  m_EditorClassIdentifier: 
+  Path: event:/test
+  guid: ea325cb91d420d4d89154eab6c9e1600
+  Banks:
+  - {fileID: 3410334977035440038}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 399542
+--- !u!114 &-8761276204751730534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Phantom Music
+  m_EditorClassIdentifier: 
+  Path: event:/Phantom Music
+  guid: fdff8c8bf77eba4f9c81423b8c00b8f8
+  Banks:
+  - {fileID: 3410334977035440038}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 5831009156993449989}
+  - {fileID: 7275086076148180841}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 22000
 --- !u!114 &-8739570893729906078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20,6 +68,49 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7940212615203864552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 16
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-7797068707409070850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps
+  guid: 5904ddd4c5883146acbec23443f9a7cd
+  Banks:
+  - {fileID: 3410334977035440038}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-7724282555900509941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,6 +135,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 22000
+--- !u!114 &-7420833498692389893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 16
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-6750699527041612929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +195,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-6307604543412276260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/Chased
+  m_EditorClassIdentifier: 
+  Name: Chased
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-5826083937860753315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,8 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/test
   guid: ea325cb91d420d4d89154eab6c9e1600
-  Banks:
-  - {fileID: 3410334977035440038}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -127,6 +257,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4884276033515721385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/Chased
+  m_EditorClassIdentifier: 
+  Name: Chased
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-3948377220171647440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,14 +291,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Phantom Music
   guid: fdff8c8bf77eba4f9c81423b8c00b8f8
-  Banks:
-  - {fileID: 3410334977035440038}
+  Banks: []
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -1510442402832176017}
-  - {fileID: 1088313028419054057}
+  - {fileID: -7420833498692389893}
+  - {fileID: -4884276033515721385}
   MinDistance: 0
   MaxDistance: 0
   Length: 22000
@@ -290,14 +439,16 @@ MonoBehaviour:
   - {fileID: 9172758055681796512}
   - {fileID: 3410334977035440038}
   EditorEvents:
-  - {fileID: -5826083937860753315}
-  - {fileID: -3948377220171647440}
+  - {fileID: -7797068707409070850}
+  - {fileID: -9072641924986594568}
+  - {fileID: -8761276204751730534}
+  - {fileID: 6280808310438716686}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3410334977035440038}
   StringsBanks:
   - {fileID: 9172758055681796512}
-  stringsBankWriteTime: 637845889660000000
+  stringsBankWriteTime: 637846061900000000
   cacheVersion: 6
 --- !u!114 &21317410224432735
 MonoBehaviour:
@@ -475,7 +626,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637845889660000000
+  lastModified: 637846061900000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -539,6 +690,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &5831009156993449989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 16
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6170111934020905438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,6 +730,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &6280808310438716686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Shard Collect
+  m_EditorClassIdentifier: 
+  Path: event:/Shard Collect
+  guid: 219e0f924225a3459ecd41e318274a07
+  Banks:
+  - {fileID: 3410334977035440038}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
 --- !u!114 &6478584377207183949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +796,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 399697
+--- !u!114 &7275086076148180841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/Chased
+  m_EditorClassIdentifier: 
+  Name: Chased
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &8916504918210148500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,9 +851,9 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637845889660000000
+  lastModified: 637846061900000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 896
+    Value: 980
   Exists: 1
