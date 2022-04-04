@@ -35,7 +35,7 @@ public class Torch : MonoBehaviour
             _currentLuminosity -= Time.deltaTime * _rateOfDepletion;
 
         _torchVolume.weight = _currentLuminosity / _maxLuminosity;
-        TorchVolumeWeight = _torchVolume.weight;
+        TorchVolumeWeight = Mathf.Clamp(_torchVolume.weight, 0, 1);
         Debug.Log(TorchVolumeWeight);
     }
 

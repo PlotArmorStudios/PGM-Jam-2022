@@ -119,10 +119,10 @@ public class EntityStateMachine : MonoBehaviour
             _idle,
             () => IsHome);
 
-        _stateMachine.AddTransition(
-            _returnHome,
-            _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius);
+        //_stateMachine.AddTransition(
+        //    _returnHome,
+        //    _chasePlayer,
+        //    () => DistanceToPlayer < _entity.DetectionRadius);
 
         //_stateMachine.AddAnyTransition(_dead, () => _entity.Health.CurrentHealthValue <= 0);
     }
