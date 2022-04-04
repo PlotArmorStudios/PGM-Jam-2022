@@ -5042,6 +5042,7 @@ MonoBehaviour:
   _lights:
   - {fileID: 1155169054129898356}
   - {fileID: 2361524890042193299}
+  _shardEventPath: event:/Shard Collect
 --- !u!1 &7819122474763914399
 GameObject:
   m_ObjectHideFlags: 0

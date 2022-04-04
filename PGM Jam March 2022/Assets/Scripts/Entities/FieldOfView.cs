@@ -15,7 +15,6 @@ public class FieldOfView : MonoBehaviour
 
     private Entity _entity;
 
-    [SerializeField]
     private F_EnemyMusic _enemyMusic;
 
     private void Start()
@@ -23,6 +22,7 @@ public class FieldOfView : MonoBehaviour
         _entity = GetComponent<Entity>();
         Player = _entity.PlayerTarget;
         StartCoroutine(FOVRoutine());
+        _enemyMusic = GetComponent<F_EnemyMusic>();
     }
 
 

@@ -27,6 +27,8 @@ public class EntityStateMachine : MonoBehaviour
     private float DistanceToPlayer => Vector3.Distance(_navMeshAgent.transform.position, _player.transform.position);
     public bool Patrolling => _idle.TogglePatrol();
 
+    private F_EnemyMusic _fEnemyMusic; 
+
     private void Start()
     {
         _entity = GetComponent<Entity>();
@@ -41,13 +43,15 @@ public class EntityStateMachine : MonoBehaviour
 
         //Set default state
         _stateMachine.SetState(_idle);
+
+        _fEnemyMusic = GetComponent<F_EnemyMusic>();
     }
 
 
     public void InitializeStates()
     {
         _idle = new Idle(_entity);
-        _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent);
+        _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent, _fEnemyMusic);
         _attack = new Attack(_entity, _player);
         _dead = new Dead(_entity);
         _returnHome = new ReturnHome(_entity);
