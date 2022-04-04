@@ -17,6 +17,11 @@ public class F_MusicPlayer : MonoBehaviour
         _musicInst.release();
     }
 
+    public void SetAmbVolume()
+    {
+        _musicInst.setVolume(0f);
+    }
+
     void OnDestroy()
     {
         _musicInst.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);

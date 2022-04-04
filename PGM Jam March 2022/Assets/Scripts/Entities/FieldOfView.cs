@@ -14,7 +14,10 @@ public class FieldOfView : MonoBehaviour
     public bool CanSeePlayer;
 
     private Entity _entity;
-    
+
+    [SerializeField]
+    private F_EnemyMusic _enemyMusic;
+
     private void Start()
     {
         _entity = GetComponent<Entity>();
@@ -61,5 +64,6 @@ public class FieldOfView : MonoBehaviour
         }
         else if (CanSeePlayer)
             CanSeePlayer = false;
+        _enemyMusic.ChasedParameterSafe();
     }
 }
