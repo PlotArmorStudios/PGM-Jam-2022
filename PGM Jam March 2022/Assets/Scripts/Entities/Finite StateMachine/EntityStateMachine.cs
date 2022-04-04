@@ -16,6 +16,7 @@ public class EntityStateMachine : MonoBehaviour
 
     private Idle _idle;
     private ChasePlayer _chasePlayer;
+    private AvoidPlayer _avoidPlayer;
     private Attack _attack;
     private Dead _dead;
     private ReturnHome _returnHome;
@@ -48,6 +49,7 @@ public class EntityStateMachine : MonoBehaviour
     {
         _idle = new Idle(_entity);
         _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent);
+        _avoidPlayer = new AvoidPlayer(_entity, _player, _navMeshAgent);
         _attack = new Attack(_entity, _player);
         _dead = new Dead(_entity);
         _returnHome = new ReturnHome(_entity);
@@ -62,6 +64,16 @@ public class EntityStateMachine : MonoBehaviour
             () => Patrolling);
 
         _stateMachine.AddTransition(
+            _patrol,
+            _avoidPlayer,
+            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer && Torch.TorchVolumeWeight > 0.3f);
+
+        _stateMachine.AddTransition(
+            _avoidPlayer,
+            _patrol,
+            () => DistanceToPlayer > _entity.DetectionRadius * Torch.TorchVolumeWeight);
+
+        _stateMachine.AddTransition(
             _idle,
             _chasePlayer,
             () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer);
@@ -74,7 +86,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _patrol,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius);
+            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= 0.3f);
 
         _stateMachine.AddTransition(
             _chasePlayer,

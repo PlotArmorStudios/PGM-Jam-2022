@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ChasePlayer : IState
+public class AvoidPlayer : IState
 {
     private readonly NavMeshAgent _navMeshAgent;
     private readonly Player _player;
@@ -10,19 +10,14 @@ public class ChasePlayer : IState
     private Entity _entity;
     private float _speed;
 
-    public ChasePlayer(Entity entity, Player player, NavMeshAgent navMeshAgent)
+    public AvoidPlayer(Entity entity, Player player, NavMeshAgent navMeshAgent)
     {
         _entity = entity;
         _player = player;
         _speed = _entity.Speed;
-        
+
         _navMeshAgent = _entity.NavAgent;
         _animator = _entity.Animator;
-    }
-
-    public void Tick()
-    {
-        FollowPlayer();
     }
 
     public void OnEnter()
@@ -36,7 +31,12 @@ public class ChasePlayer : IState
         Debug.Log("Disable navmesh");
     }
 
-    void FollowPlayer()
+    public void Tick()
+    {
+        GoAwayFromPlayer();
+    }
+
+    void GoAwayFromPlayer()
     {
         if (_player)
         {
@@ -46,8 +46,9 @@ public class ChasePlayer : IState
             _animator.SetBool("Attack", false);
             _animator.SetBool("Running", true);
             _entity.transform.rotation = Quaternion.Slerp(_entity.transform.rotation,
-                Quaternion.LookRotation(_player.transform.position - _entity.transform.position), 5f * Time.deltaTime);
-            _navMeshAgent.SetDestination(_player.transform.position);
+                Quaternion.LookRotation(_entity.transform.position - _player.transform.position), 5f * Time.deltaTime);
+            Vector3 awayDirection = _player.transform.position + _entity.transform.position;
+            _navMeshAgent.SetDestination(awayDirection * 2f);
         }
     }
 }

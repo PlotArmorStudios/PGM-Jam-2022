@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class SoulLantern : Lantern
     [SerializeField] private int _areaToMoveTo = 1;
     [SerializeField] private bool _movesPhantom;
     [SerializeField] float _timeToReturnToPlayer = 7f;
-
+    public static event Action OnTurnOn;
     public override void TurnOn()
     {
         base.TurnOn();
@@ -17,6 +18,7 @@ public class SoulLantern : Lantern
             GameManager.Instance.MovePhantom(_areaToMoveTo);
             StartCoroutine(ReturnToPlayerCam());
         }
+        OnTurnOn?.Invoke();
     }
 
     private IEnumerator ReturnToPlayerCam()

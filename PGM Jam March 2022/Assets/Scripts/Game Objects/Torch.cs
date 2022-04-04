@@ -7,6 +7,7 @@ using UnityEngine.Rendering;
 public class Torch : MonoBehaviour
 {
     [SerializeField] private Volume _torchVolume;
+    public static float TorchVolumeWeight { get; private set; }
     [SerializeField] private float _maxLuminosity = 100;
     [SerializeField] float _rateOfDepletion = 5f;
 
@@ -18,12 +19,24 @@ public class Torch : MonoBehaviour
         _currentLuminosity = _maxLuminosity;
     }
 
+    private void OnEnable()
+    {
+        SoulLantern.OnTurnOn += SetLuminosity;
+    }
+
+    private void OnDisable()
+    {
+        SoulLantern.OnTurnOn -= SetLuminosity;
+    }
+
     private void Update()
     {
         if (Depleting)
             _currentLuminosity -= Time.deltaTime * _rateOfDepletion;
-        
+
         _torchVolume.weight = _currentLuminosity / _maxLuminosity;
+        TorchVolumeWeight = _torchVolume.weight;
+        Debug.Log(TorchVolumeWeight);
     }
 
     [ContextMenu("Set Lumi")]

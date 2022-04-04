@@ -49,10 +49,10 @@ public class DialogueSection : MonoBehaviour
 
     private void DisplayNextSen()
     {
+        continueButton.onClick.AddListener(ContinueButtonPressed);
         if (currentSentenceIndex >= numOfSentences)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
-
             if (_sceneLoader) _sceneLoader.LoadScene(_sceneToLoad);
             if (GameManager.Instance) GameManager.Instance.ActivatePlayer();
             if (_lanternToActivate) _lanternToActivate.TurnOn();
@@ -82,6 +82,11 @@ public class DialogueSection : MonoBehaviour
 
     private void ContinueButtonPressed()
     {
+        //if (dialogue.GetCurrentAnimatorStateInfo(0).IsName("TextFadeOut"))
+        //{
+        //    DisplayNextSen();
+        //}
+        continueButton.onClick.RemoveListener(ContinueButtonPressed);
         dialogue.Play("TextFadeOut", -1, 0f);
         if (currentSentenceIndex < numOfSentences && !characterName[currentSentenceIndex].Equals(currentName)
             || currentSentenceIndex == numOfSentences)
