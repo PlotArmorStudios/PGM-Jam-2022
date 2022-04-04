@@ -54,7 +54,7 @@ public class StateMachine //Stores a list of states that can be added or removed
         _currentState.Tick();
 
 #if TICK_LOG
-        Debug.Log($"Ticking {_currentState}");
+        //Debug.Log($"Ticking {_currentState}");
 #endif
     }
 

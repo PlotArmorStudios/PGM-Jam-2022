@@ -16,10 +16,12 @@ public class EntityStateMachine : MonoBehaviour
 
     private Idle _idle;
     private ChasePlayer _chasePlayer;
+    private AvoidPlayer _avoidPlayer;
     private Attack _attack;
     private Dead _dead;
     private ReturnHome _returnHome;
     private Patrol _patrol;
+    private float torchFractionToAttack = 0.3f;
 
     public IState CurrentState => _stateMachine.CurrentState;
     public bool IsHome => Vector3.Distance(_entity.transform.position, _entity.InitialPosition) < _entity.HomeRadius;
@@ -52,6 +54,7 @@ public class EntityStateMachine : MonoBehaviour
     {
         _idle = new Idle(_entity);
         _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent, _fEnemyMusic);
+        _avoidPlayer = new AvoidPlayer(_entity, _player, _navMeshAgent);
         _attack = new Attack(_entity, _player);
         _dead = new Dead(_entity);
         _returnHome = new ReturnHome(_entity);
@@ -66,6 +69,16 @@ public class EntityStateMachine : MonoBehaviour
             () => Patrolling);
 
         _stateMachine.AddTransition(
+            _patrol,
+            _avoidPlayer,
+            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer && Torch.TorchVolumeWeight > torchFractionToAttack);
+
+        _stateMachine.AddTransition(
+            _avoidPlayer,
+            _patrol,
+            () => DistanceToPlayer > _entity.DetectionRadius * Torch.TorchVolumeWeight);
+
+        _stateMachine.AddTransition(
             _idle,
             _chasePlayer,
             () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer);
@@ -78,7 +91,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _patrol,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius);
+            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= torchFractionToAttack);
 
         _stateMachine.AddTransition(
             _chasePlayer,
@@ -113,7 +126,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _returnHome,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius);
+            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= torchFractionToAttack);
 
         //_stateMachine.AddAnyTransition(_dead, () => _entity.Health.CurrentHealthValue <= 0);
     }

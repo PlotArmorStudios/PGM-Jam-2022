@@ -10000,6 +10000,10 @@ PrefabInstance:
       propertyPath: _torchVolume
       value: 
       objectReference: {fileID: 1630236106}
+    - target: {fileID: 438275960, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
+      propertyPath: _rateOfDepletion
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1483309560019607513, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
       propertyPath: m_Name
       value: Player
