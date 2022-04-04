@@ -22,7 +22,6 @@ public class F_EnemyMusic : MonoBehaviour
     {
         _enemyMusicInst = RuntimeManager.CreateInstance(_enemyMusic);
         _enemyMusicInst.start();
-        _enemyMusicInst.release();
 
         _eventDes = RuntimeManager.GetEventDescription(_enemyMusic);
         _eventDes.getParameterDescriptionByName("Chased", out _chasedParam);
@@ -54,13 +53,15 @@ public class F_EnemyMusic : MonoBehaviour
     [ContextMenu("Test Danger Parameter")]
     public void ChasedParameterDanger()
     {
-        _enemyMusicInst.setParameterByID(_chasedParam.id, 1);
+        _enemyMusicInst.setParameterByID(_chasedParam.id, 1.0f);
+        Debug.Log("Player is being chased.");
     }
 
     [ContextMenu("Test Safe Parameter")]
     public void ChasedParameterSafe()
     {
-        _enemyMusicInst.setParameterByID(_chasedParam.id, 0);
+        _enemyMusicInst.setParameterByID(_chasedParam.id, 0.0f);
+        Debug.Log("Player is safe.");
     }
 
     [ContextMenu("Set Music")]
@@ -78,6 +79,7 @@ public class F_EnemyMusic : MonoBehaviour
 
     private void OnDestroy()
     {
+        _enemyMusicInst.release();
         _enemyMusicInst.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
