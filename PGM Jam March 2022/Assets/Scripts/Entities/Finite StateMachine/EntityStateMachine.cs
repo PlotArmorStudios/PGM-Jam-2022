@@ -34,6 +34,7 @@ public class EntityStateMachine : MonoBehaviour
         _entity = GetComponent<Entity>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _player = FindObjectOfType<Player>();
+        _fEnemyMusic = GetComponent<F_EnemyMusic>();
 
         _stateMachine = new StateMachine();
 
@@ -44,7 +45,6 @@ public class EntityStateMachine : MonoBehaviour
         //Set default state
         _stateMachine.SetState(_idle);
 
-        _fEnemyMusic = GetComponent<F_EnemyMusic>();
     }
 
 

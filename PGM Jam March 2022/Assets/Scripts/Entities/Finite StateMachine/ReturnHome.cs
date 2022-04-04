@@ -1,3 +1,5 @@
+//#define DebugAI
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,8 +15,10 @@ public class ReturnHome : IState
         _entity = entity;
         _navMeshAgent = entity.NavAgent;
         _initialPosition = new Vector3(entity.InitialPosition.x, entity.InitialPosition.y, entity.InitialPosition.z);
+#if DebugAI
         Debug.Log("New init position is: " + entity.InitialPosition);
         Debug.Log("Position is set to: " + _initialPosition);
+#endif
         _animator = entity.Animator;
     }
 
@@ -37,7 +41,9 @@ public class ReturnHome : IState
 
     private void ReturnToStartPosition()
     {
+#if DebugAI
         Debug.Log($"Position to move to is {_entity.InitialPosition}");
+#endif
         _navMeshAgent.destination = _entity.InitialPosition;
     }
 }

@@ -17,7 +17,7 @@ public class ChasePlayer : IState
         _entity = entity;
         _player = player;
         _speed = _entity.Speed;
-        
+
         _navMeshAgent = _entity.NavAgent;
         _animator = _entity.Animator;
 
@@ -37,12 +37,13 @@ public class ChasePlayer : IState
     public void OnExit()
     {
         _navMeshAgent.enabled = false;
-        Debug.Log("Disable navmesh");
+        _fEnemyMusic.ChasedParameterSafe();
     }
 
     void FollowPlayer()
     {
-        if (_player) {
+        if (_player)
+        {
             _navMeshAgent.isStopped = false;
             _navMeshAgent.speed = _speed;
             _attackTimer = 0;
@@ -52,7 +53,6 @@ public class ChasePlayer : IState
                 Quaternion.LookRotation(_player.transform.position - _entity.transform.position), 5f * Time.deltaTime);
             _navMeshAgent.SetDestination(_player.transform.position);
             _fEnemyMusic.ChasedParameterDanger();
-        } else
-            _fEnemyMusic.ChasedParameterSafe();
+        }
     }
 }

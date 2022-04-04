@@ -4,9 +4,7 @@ using FMOD.Studio;
 
 public class F_EnemyMusic : MonoBehaviour
 {
-    [SerializeField]
-    [EventRef]
-    private string _enemyMusic;
+    [SerializeField] [EventRef] private string _enemyMusic;
 
     private EventInstance _enemyMusicInst;
 
@@ -18,8 +16,7 @@ public class F_EnemyMusic : MonoBehaviour
     private Player _player;
     private Phantom _phantom;
 
-    [SerializeField]
-    private F_MusicPlayer _fMusicPlayer;
+    [SerializeField] private F_MusicPlayer _fMusicPlayer;
 
     void Start()
     {
@@ -48,14 +45,35 @@ public class F_EnemyMusic : MonoBehaviour
             _enemyMusicInst.setParameterByID(_distanceParam.id, 16f);
     }
 
+    [ContextMenu("Context Menu Log Example")]
+    public void LogExample()
+    {
+        Debug.Log("This menu item will trigger this log in play mode.");
+    }
+
+    [ContextMenu("Test Danger Parameter")]
     public void ChasedParameterDanger()
     {
         _enemyMusicInst.setParameterByID(_chasedParam.id, 1);
     }
 
+    [ContextMenu("Test Safe Parameter")]
     public void ChasedParameterSafe()
     {
         _enemyMusicInst.setParameterByID(_chasedParam.id, 0);
+    }
+
+    [ContextMenu("Set Music")]
+    private void SetMusicInstance()
+    {
+        _enemyMusicInst.setParameterByID(_distanceParam.id, 10, false);
+        _fMusicPlayer.SetAmbVolume();
+    }
+
+    [ContextMenu("Reset Music")]
+    private void ResetMusicInstance()
+    {
+        _enemyMusicInst.setParameterByID(_distanceParam.id, 16);
     }
 
     private void OnDestroy()
