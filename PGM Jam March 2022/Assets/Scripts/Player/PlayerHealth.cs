@@ -12,12 +12,13 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _healRate = 5f;
-    [SerializeField] private int _numberOfLives = 3;
-
+    [SerializeField] private int _maxNumberOfLives = 3;
+    
     private Volume _globalVolume;
     private float _currentHealth;
     private Animator _animator;
     private SceneLoader _sceneLoader;
+    private int _numberOfLives;
     public bool IsAlive { get; set; }
 
     private void OnValidate() => _globalVolume = GetComponentInChildren<Volume>();
@@ -30,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
         _animator = GetComponentInChildren<Animator>();
         IsAlive = true;
         _sceneLoader = GetComponent<SceneLoader>();
+        _numberOfLives = _maxNumberOfLives;
     }
 
     private void Update()
