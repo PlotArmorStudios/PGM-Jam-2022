@@ -96,7 +96,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _chasePlayer,
             _attack,
-            () => DistanceToPlayer <= _entity.AttackRadius);
+            () => DistanceToPlayer <= _entity.FieldOfView.Radius && CanSeePlayer);
 
         _stateMachine.AddTransition(
             _attack,

@@ -5903,7 +5903,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014008135}
-  m_LocalRotation: {x: 0.24176265, y: -0.4442957, z: 0.12586448, w: 0.853411}
+  m_LocalRotation: {x: 0.24176267, y: -0.4442957, z: 0.12586446, w: 0.853411}
   m_LocalPosition: {x: 25.609999, y: 28.269999, z: 97.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8316,7 +8316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1652062025
 Transform:
   m_ObjectHideFlags: 0
@@ -10052,6 +10052,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1483309561377051294, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
+      propertyPath: _fadeScreen
+      value: 
+      objectReference: {fileID: 449515339}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
 --- !u!1001 &2210491526370435515

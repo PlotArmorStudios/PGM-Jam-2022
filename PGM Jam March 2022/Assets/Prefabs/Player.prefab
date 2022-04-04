@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 1483309560019607509}
   - component: {fileID: 1483309560019607511}
   - component: {fileID: 1483309560019607510}
+  - component: {fileID: 1483309561377051294}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -228,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _healRate: 5
+  _numberOfLives: 3
 --- !u!114 &1483309560019607510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +242,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 443b2506703d42abbd3703f8f2b44f3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1483309561377051294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483309560019607513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6514ac2aea4dfb47a4744b37c4a439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneToLoad: 
+  _fadeScreen: {fileID: 0}
+  _transitionToggle: 1
+  _transitionSpeed: 1
 --- !u!1 &1483309560140804550
 GameObject:
   m_ObjectHideFlags: 0
