@@ -12,17 +12,15 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private float _maxHealth;
     [SerializeField] private float _healRate = 5f;
+    [SerializeField] private int _numberOfLives = 3;
 
     private Volume _globalVolume;
     private float _currentHealth;
     private Animator _animator;
+    private SceneLoader _sceneLoader;
     public bool IsAlive { get; set; }
 
-    private void OnValidate()
-    {
-        _globalVolume = GetComponentInChildren<Volume>();
-    }
-
+    private void OnValidate() => _globalVolume = GetComponentInChildren<Volume>();
     private void OnEnable() => PhantomAttack.OnPhantomAttack += TakeDamage;
     private void OnDisable() => PhantomAttack.OnPhantomAttack -= TakeDamage;
 
@@ -31,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         _currentHealth = _maxHealth;
         _animator = GetComponentInChildren<Animator>();
         IsAlive = true;
+        _sceneLoader = GetComponent<SceneLoader>();
     }
 
     private void Update()
@@ -55,11 +54,17 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         OnPlayerDeath?.Invoke();
+        _numberOfLives--;
         IsAlive = false;
         _animator.SetTrigger("Die");
+
         GameManager.Instance.DeactivatePlayer();
-        StartCoroutine(LoadLastCheckPoint());
+
+        if (_numberOfLives == 0) RestartGame();
+        else StartCoroutine(LoadLastCheckPoint());
     }
+
+    private void RestartGame() => _sceneLoader.LoadScene("MenuScene");
 
     private IEnumerator LoadLastCheckPoint()
     {
@@ -73,8 +78,5 @@ public class PlayerHealth : MonoBehaviour
     }
 
     [ContextMenu("Take Damage Test")]
-    public void TakeDamageTest()
-    {
-        TakeDamage(20);
-    }
+    public void TakeDamageTest() => TakeDamage(20);
 }
