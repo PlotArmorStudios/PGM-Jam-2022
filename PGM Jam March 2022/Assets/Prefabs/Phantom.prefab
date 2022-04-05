@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 709703928}
   - component: {fileID: 2986552418548773245}
   - component: {fileID: 728546052}
+  - component: {fileID: 1919992060}
   m_Layer: 0
   m_Name: Phantom
   m_TagString: Untagged
@@ -106,9 +107,9 @@ MonoBehaviour:
   _attackRadius: 15
   _attackDelay: 2
   _returnHomeTime: 4
-  _homeRadius: 30
+  _homeRadius: 100
   _speed: 20
-  _patrolSpeed: 3.5
+  _patrolSpeed: 20
 --- !u!135 &1459952988568763519
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -168,6 +169,20 @@ MonoBehaviour:
   Radius: 28.74
   Player: {fileID: 0}
   CanSeePlayer: 0
+--- !u!114 &1919992060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459952988568763515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f90c7b2e69284d17bf3b3df44183a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyMusic: event:/Phantom Music
+  _fMusicPlayer: {fileID: 0}
 --- !u!1001 &1459952990293114681
 PrefabInstance:
   m_ObjectHideFlags: 0
