@@ -35,7 +35,7 @@ public class TriggerBox : MonoBehaviour
 
         _vCam.Priority = 20;
         
-        if (GameManager.Instance.RequiredShardsToCollect >= GameManager.Instance.NumberOfShards)
+        if (GameManager.Instance.NumberOfShards >= GameManager.Instance.RequiredShardsToCollect)
         {
             dialogueGameObject.SetActive(true);
             NPC.transform.position = NPCSpawnLocation.position;
