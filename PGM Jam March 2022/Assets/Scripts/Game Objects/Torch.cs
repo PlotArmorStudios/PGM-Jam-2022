@@ -1,3 +1,4 @@
+//#define DebugTorchVolume
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -38,7 +39,10 @@ public class Torch : MonoBehaviour
 
         _torchVolume.weight = _currentLuminosity / _maxLuminosity;
         TorchVolumeWeight = Mathf.Clamp(_torchVolume.weight, 0, 1);
+
+#if DebugTorchVolume
         Debug.Log(TorchVolumeWeight);
+#endif
     }
 
     [ContextMenu("Set Lumi")]
