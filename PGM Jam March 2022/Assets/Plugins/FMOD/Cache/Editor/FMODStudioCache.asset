@@ -43,8 +43,8 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5959472705852766530}
-  - {fileID: -7904245030235875499}
+  - {fileID: 6289407530257231417}
+  - {fileID: -1533513722457173390}
   MinDistance: 0
   MaxDistance: 0
   Length: 22000
@@ -147,7 +147,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-7797068707409070850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-5826083937860753315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,6 +603,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-1533513722457173390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/Chased
+  m_EditorClassIdentifier: 
+  Name: Chased
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1510442402832176017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,7 +668,7 @@ MonoBehaviour:
   - {fileID: 3410334977035440038}
   StringsBanks:
   - {fileID: 9172758055681796512}
-  stringsBankWriteTime: 637846782270000000
+  stringsBankWriteTime: 637846930032430001
   cacheVersion: 6
 --- !u!114 &21317410224432735
 MonoBehaviour:
@@ -871,7 +891,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4378484592059287460}
+  - {fileID: 3559493489632048164}
   MinDistance: 0
   MaxDistance: 0
   Length: 96000
@@ -910,7 +930,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637846782270000000
+  lastModified: 637846930032419965
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -934,6 +954,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &3559493489632048164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambient Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4134609320683330680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,7 +1013,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4815477417921256076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,6 +1177,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3500
+--- !u!114 &6289407530257231417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 16
+  Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6478584377207183949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,7 +1375,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637846782270000000
+  lastModified: 637846930032430001
   LoadResult: 0
   FileSizes:
   - Name: 

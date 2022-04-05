@@ -8,6 +8,7 @@ public class Torch : MonoBehaviour
 {
     [SerializeField] private Volume _torchVolume;
     public static float TorchVolumeWeight { get; private set; }
+    public static float TorchFractionToAttack { get; private set; } 
     [SerializeField] private float _maxLuminosity = 100;
     [SerializeField] float _rateOfDepletion = 5f;
 
@@ -17,6 +18,7 @@ public class Torch : MonoBehaviour
     private void Start()
     {
         _currentLuminosity = _maxLuminosity;
+        TorchFractionToAttack = 0.3f;
     }
 
     private void OnEnable()
