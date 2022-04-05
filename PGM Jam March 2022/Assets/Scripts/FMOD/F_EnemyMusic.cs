@@ -13,9 +13,11 @@ public class F_EnemyMusic : MonoBehaviour
     private PARAMETER_DESCRIPTION _chasedParam;
     private PARAMETER_DESCRIPTION _distanceParam;
 
+    
     private Player _player;
     private Phantom _phantom;
-
+    private EntityStateMachine _entityStateMachine;
+    
     [SerializeField] private F_MusicPlayer _fMusicPlayer;
 
     void Start()
@@ -29,6 +31,7 @@ public class F_EnemyMusic : MonoBehaviour
 
         _player = FindObjectOfType<Player>();
         _phantom = GetComponent<Phantom>();
+        _entityStateMachine = GetComponent<EntityStateMachine>();
     }
 
     private void Update()
@@ -42,6 +45,11 @@ public class F_EnemyMusic : MonoBehaviour
         }
         else if (distance > 45)
             _enemyMusicInst.setParameterByID(_distanceParam.id, 16f);
+
+        if (_entityStateMachine.CanSeePlayer && !(_entityStateMachine.CurrentState is AvoidPlayer))
+            ChasedParameterDanger();
+        else
+            ChasedParameterSafe();
     }
 
     [ContextMenu("Context Menu Log Example")]
