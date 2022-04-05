@@ -20,11 +20,10 @@ public class TorchMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //blinkSpeed -= Time.deltaTime;
         torchMeter.fillAmount = Torch.TorchVolumeWeight;
         if (Torch.TorchVolumeWeight > Torch.TorchFractionToAttack)
         {
-            Color lerpedColor = Color.Lerp(endColor, startColor, 1.42f * (Torch.TorchVolumeWeight - .3f));
+            Color lerpedColor = Color.Lerp(endColor, startColor, 1.42f * (Torch.TorchVolumeWeight - Torch.TorchFractionToAttack));
             torchMeter.color = lerpedColor;
         }
         else
