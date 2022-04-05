@@ -21,7 +21,6 @@ public class EntityStateMachine : MonoBehaviour
     private Dead _dead;
     private ReturnHome _returnHome;
     private Patrol _patrol;
-    private float torchFractionToAttack = 0.3f;
 
     public IState CurrentState => _stateMachine.CurrentState;
     public bool IsHome => Vector3.Distance(_entity.transform.position, _entity.InitialPosition) < _entity.HomeRadius;
@@ -71,7 +70,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _patrol,
             _avoidPlayer,
-            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer && Torch.TorchVolumeWeight > torchFractionToAttack);
+            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer && Torch.TorchVolumeWeight > Torch.TorchFractionToAttack);
 
         _stateMachine.AddTransition(
             _avoidPlayer,
@@ -91,7 +90,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _patrol,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= torchFractionToAttack);
+            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= Torch.TorchFractionToAttack);
 
         _stateMachine.AddTransition(
             _chasePlayer,
@@ -126,7 +125,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _returnHome,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= torchFractionToAttack);
+            () => DistanceToPlayer < _entity.DetectionRadius && Torch.TorchVolumeWeight <= Torch.TorchFractionToAttack);
 
         //_stateMachine.AddAnyTransition(_dead, () => _entity.Health.CurrentHealthValue <= 0);
     }
