@@ -52,8 +52,8 @@ public class TorchTop : MonoBehaviour
             float randomTimeBetweenBlink = Random.Range(minTimeBetweenBlink, maxTimeBetweenBlink);
             torchMaterial.SetColor("_EmissionColor", startColor * blinkOffIntensity);
             yield return new WaitForSeconds(randomTimeBetweenBlink);
-            torchMaterial.SetColor("_EmissionColor", startColor * blinkOnIntensity);
 
+            torchMaterial.SetColor("_EmissionColor", startColor * blinkOnIntensity);
             float randomTimeOn = Random.Range(minOnTime, maxOnTime);
             yield return new WaitForSeconds(randomTimeOn);
         }
