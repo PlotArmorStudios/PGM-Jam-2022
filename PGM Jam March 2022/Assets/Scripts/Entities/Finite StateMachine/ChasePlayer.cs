@@ -10,9 +10,7 @@ public class ChasePlayer : IState
     private Entity _entity;
     private float _speed;
 
-    private F_EnemyMusic _fEnemyMusic;
-
-    public ChasePlayer(Entity entity, Player player, NavMeshAgent navMeshAgent, F_EnemyMusic fEnemyMusic)
+    public ChasePlayer(Entity entity, Player player, NavMeshAgent navMeshAgent)
     {
         _entity = entity;
         _player = player;
@@ -20,8 +18,6 @@ public class ChasePlayer : IState
 
         _navMeshAgent = _entity.NavAgent;
         _animator = _entity.Animator;
-
-        _fEnemyMusic = fEnemyMusic;
     }
 
     public void Tick()
@@ -37,7 +33,6 @@ public class ChasePlayer : IState
     public void OnExit()
     {
         _navMeshAgent.enabled = false;
-        _fEnemyMusic.ChasedParameterSafe();
     }
 
     void FollowPlayer()
@@ -52,7 +47,6 @@ public class ChasePlayer : IState
             _entity.transform.rotation = Quaternion.Slerp(_entity.transform.rotation,
                 Quaternion.LookRotation(_player.transform.position - _entity.transform.position), 5f * Time.deltaTime);
             _navMeshAgent.SetDestination(_player.transform.position);
-            _fEnemyMusic.ChasedParameterDanger();
         }
     }
 }
