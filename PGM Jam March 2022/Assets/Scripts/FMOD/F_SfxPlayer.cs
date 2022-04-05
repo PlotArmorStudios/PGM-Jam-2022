@@ -7,6 +7,11 @@ public class F_SfxPlayer : MonoBehaviour
     [EventRef]
     private string _footstepEventPath;
 
+    private void Start()
+    {
+        RuntimeManager.PlayOneShotAttached("event:/Intro", gameObject);
+    }
+
     public void PlayFootsteps()
     {
         RuntimeManager.PlayOneShotAttached(_footstepEventPath, gameObject);

@@ -10,13 +10,11 @@ public class F_EnemyMusic : MonoBehaviour
 
     private EventDescription _eventDes;
 
-    private PARAMETER_DESCRIPTION _chasedParam;
     private PARAMETER_DESCRIPTION _distanceParam;
 
     
     private Player _player;
     private Phantom _phantom;
-    private EntityStateMachine _entityStateMachine;
     
     [SerializeField] private F_MusicPlayer _fMusicPlayer;
 
@@ -26,33 +24,34 @@ public class F_EnemyMusic : MonoBehaviour
         _enemyMusicInst.start();
 
         _eventDes = RuntimeManager.GetEventDescription(_enemyMusic);
-        _eventDes.getParameterDescriptionByName("Chased", out _chasedParam);
         _eventDes.getParameterDescriptionByName("distance", out _distanceParam);
 
         _player = FindObjectOfType<Player>();
         _phantom = GetComponent<Phantom>();
-        _entityStateMachine = GetComponent<EntityStateMachine>();
     }
 
     private void Update()
     {
         float distance = Vector3.Distance(_player.transform.position, _phantom.transform.position);
-        if (distance <= 45 && distance >= 3)
+        if (distance <= 75 && distance >= 3)
         {
-            //Distance Parameter in FMOD is set between 15 and 1.
+            //Distance Parameter in FMOD is set between 25 and 1.
             _enemyMusicInst.setParameterByID(_distanceParam.id, distance / 3, false);
-            _fMusicPlayer.SetAmbVolume();
         }
         else if (distance > 45)
         {
-            _fMusicPlayer.SetSoloVolume();
-            _enemyMusicInst.setParameterByID(_distanceParam.id, 16f);
+            //Distance Parameter fades out Phantom music between 25 and 30 with 30 being no volume.
+            _enemyMusicInst.setParameterByID(_distanceParam.id, 30f);
         }
 
-        if (_entityStateMachine.CanSeePlayer && !(_entityStateMachine.CurrentState is AvoidPlayer))
-            ChasedParameterDanger();
-        else
-            ChasedParameterSafe();
+        if (distance <= 75 && distance > 50)
+            _fMusicPlayer.SetLonely(1f);
+        if (distance <= 50 && distance > 25)
+            _fMusicPlayer.SetLonely(2f);
+        if (distance <= 25)
+            _fMusicPlayer.SetLonely(3f);
+        else if (distance > 75)
+            _fMusicPlayer.SetLonely(0f);
     }
 
     [ContextMenu("Context Menu Log Example")]
@@ -61,31 +60,18 @@ public class F_EnemyMusic : MonoBehaviour
         Debug.Log("This menu item will trigger this log in play mode.");
     }
 
-    [ContextMenu("Test Danger Parameter")]
-    public void ChasedParameterDanger()
-    {
-        _enemyMusicInst.setParameterByID(_chasedParam.id, 1.0f);
-        Debug.Log("Player is being chased.");
-    }
-
-    [ContextMenu("Test Safe Parameter")]
-    public void ChasedParameterSafe()
-    {
-        _enemyMusicInst.setParameterByID(_chasedParam.id, 0.0f);
-        Debug.Log("Player is safe.");
-    }
-
     [ContextMenu("Set Music")]
-    private void SetMusicInstance()
+    private void SetMusicDangerInstance()
     {
-        _enemyMusicInst.setParameterByID(_distanceParam.id, 10, false);
-        _fMusicPlayer.SetAmbVolume();
+        _enemyMusicInst.setParameterByID(_distanceParam.id, 0, false);
+        _fMusicPlayer.SetLonely(3f);
     }
 
     [ContextMenu("Reset Music")]
     private void ResetMusicInstance()
     {
-        _enemyMusicInst.setParameterByID(_distanceParam.id, 16);
+        _enemyMusicInst.setParameterByID(_distanceParam.id, 30f);
+        _fMusicPlayer.SetLonely(0f);
     }
 
     private void OnDestroy()

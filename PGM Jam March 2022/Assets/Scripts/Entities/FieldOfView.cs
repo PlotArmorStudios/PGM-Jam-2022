@@ -15,14 +15,11 @@ public class FieldOfView : MonoBehaviour
 
     private Entity _entity;
 
-    private F_EnemyMusic _enemyMusic;
-
     private void Start()
     {
         _entity = GetComponent<Entity>();
         Player = _entity.PlayerTarget;
         StartCoroutine(FOVRoutine());
-        _enemyMusic = GetComponent<F_EnemyMusic>();
     }
 
 
@@ -64,6 +61,5 @@ public class FieldOfView : MonoBehaviour
         }
         else if (CanSeePlayer)
             CanSeePlayer = false;
-        _enemyMusic.ChasedParameterSafe();
     }
 }

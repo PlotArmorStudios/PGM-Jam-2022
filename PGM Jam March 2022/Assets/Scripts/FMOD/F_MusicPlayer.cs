@@ -6,29 +6,31 @@ public class F_MusicPlayer : MonoBehaviour
 {
     [SerializeField]
     [EventRef]
-    private string _gameplayMusic;
+    private string _ambientMusic;
 
     private EventInstance _musicInst;
 
+    private EventDescription _eventDes;
+
+    private PARAMETER_DESCRIPTION _paramDes;
+
     void Start()
     {
-        _musicInst = RuntimeManager.CreateInstance(_gameplayMusic);
+        _musicInst = RuntimeManager.CreateInstance(_ambientMusic);
         _musicInst.start();
-        _musicInst.release();
+
+        _eventDes = RuntimeManager.GetEventDescription(_ambientMusic);
+        _eventDes.getParameterDescriptionByName("Lonely", out _paramDes);
     }
 
-    public void SetAmbVolume()
+    public void SetLonely(float value)
     {
-        _musicInst.setVolume(0f);
-    }
-    
-    public void SetSoloVolume()
-    {
-        _musicInst.setVolume(1f);
+        _musicInst.setParameterByID(_paramDes.id, value);
     }
 
     void OnDestroy()
     {
+        _musicInst.release();
         _musicInst.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 }

@@ -35,7 +35,6 @@ public class EntityStateMachine : MonoBehaviour
         _entity = GetComponent<Entity>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _player = FindObjectOfType<Player>();
-        _fEnemyMusic = GetComponent<F_EnemyMusic>();
 
         _stateMachine = new StateMachine();
 
@@ -52,7 +51,7 @@ public class EntityStateMachine : MonoBehaviour
     public void InitializeStates()
     {
         _idle = new Idle(_entity);
-        _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent, _fEnemyMusic);
+        _chasePlayer = new ChasePlayer(_entity, _player, _navMeshAgent);
         _avoidPlayer = new AvoidPlayer(_entity, _player, _navMeshAgent);
         _attack = new Attack(_entity, _player);
         _dead = new Dead(_entity);
