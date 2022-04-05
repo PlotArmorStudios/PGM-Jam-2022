@@ -44,7 +44,10 @@ public class F_EnemyMusic : MonoBehaviour
             _fMusicPlayer.SetAmbVolume();
         }
         else if (distance > 45)
+        {
+            _fMusicPlayer.SetSoloVolume();
             _enemyMusicInst.setParameterByID(_distanceParam.id, 16f);
+        }
 
         if (_entityStateMachine.CanSeePlayer && !(_entityStateMachine.CurrentState is AvoidPlayer))
             ChasedParameterDanger();

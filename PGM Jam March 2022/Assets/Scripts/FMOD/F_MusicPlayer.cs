@@ -21,6 +21,11 @@ public class F_MusicPlayer : MonoBehaviour
     {
         _musicInst.setVolume(0f);
     }
+    
+    public void SetSoloVolume()
+    {
+        _musicInst.setVolume(1f);
+    }
 
     void OnDestroy()
     {
