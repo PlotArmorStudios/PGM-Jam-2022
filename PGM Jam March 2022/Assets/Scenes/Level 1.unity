@@ -8577,14 +8577,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 084521fd883b5714cb89c5514c90cfb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torchMaterial: {fileID: 2100000, guid: 4a619dd85aa5ddb4ab3586029f4bda65, type: 2}
+  torchMaterial: {fileID: 0}
   objectToChange: {fileID: 1731087555}
-  startColor: {r: 0.5647059, g: 0, b: 1, a: 1}
+  startColor: {r: 0.8570546, g: 0, b: 1.5157169, a: 0.919133}
   startIntensity: 1.016925
   endIntensity: 0
   blinkOnIntensity: 0.5
   blinkOffIntensity: 0
-  blinkSpeed: 3
+  minTimeBetweenBlink: 0.01
+  maxTimeBetweenBlink: 0.43
+  minOnTime: 0.1
+  maxOnTime: 0.4
 --- !u!1 &1749378698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 25191113546819385, guid: ec2067280070aec4890334af8eca838d, type: 3}
@@ -9631,7 +9634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2004131275
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9666,8 +9669,8 @@ MonoBehaviour:
   torchMeter: {fileID: 2004131277}
   startColor: {r: 0.86666673, g: 0.6431373, b: 0.9960785, a: 1}
   endColor: {r: 0.28235295, g: 0.16470589, b: 0.53333336, a: 1}
-  blinkOnColor: {r: 0.28235295, g: 0.16470589, b: 0.53333336, a: 1}
-  blinkOffColor: {r: 0, g: 0, b: 0, a: 1}
+  blinkOnColor: {r: 0.73249465, g: 0.27044016, b: 1, a: 1}
+  blinkOffColor: {r: 0.28235295, g: 0.16470589, b: 0.53333336, a: 0}
   blinkSpeed: 3
 --- !u!114 &2004131277
 MonoBehaviour:
@@ -10127,7 +10130,7 @@ PrefabInstance:
       objectReference: {fileID: 1630236106}
     - target: {fileID: 438275960, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
       propertyPath: _rateOfDepletion
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1483309560019607513, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
       propertyPath: m_Name
@@ -10779,7 +10782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5293377774210489977, guid: 3d65dba4b9116854fbdfcec5b9faa3b3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 2.964805e-16
+      value: -2.9648067e-16
       objectReference: {fileID: 0}
     - target: {fileID: 5293377774210489977, guid: 3d65dba4b9116854fbdfcec5b9faa3b3, type: 3}
       propertyPath: m_LocalRotation.y
@@ -10787,7 +10790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5293377774210489977, guid: 3d65dba4b9116854fbdfcec5b9faa3b3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.183932e-16
+      value: 4.183934e-16
       objectReference: {fileID: 0}
     - target: {fileID: 7127655964700506809, guid: 3d65dba4b9116854fbdfcec5b9faa3b3, type: 3}
       propertyPath: m_Priority
@@ -11138,7 +11141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7164214326011296051, guid: 4636efa67bd6fee4a81213d0c7b83694, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1e-45
+      value: -1e-45
       objectReference: {fileID: 0}
     - target: {fileID: 7164214326011296051, guid: 4636efa67bd6fee4a81213d0c7b83694, type: 3}
       propertyPath: m_LocalRotation.y
@@ -11146,7 +11149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7164214326011296051, guid: 4636efa67bd6fee4a81213d0c7b83694, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -1e-45
+      value: 1e-45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4636efa67bd6fee4a81213d0c7b83694, type: 3}
