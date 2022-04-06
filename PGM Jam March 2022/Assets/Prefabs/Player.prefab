@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 958327842}
   - component: {fileID: 958327841}
   - component: {fileID: 958327840}
+  - component: {fileID: 1731087557}
   m_Layer: 10
   m_Name: TorchTop
   m_TagString: Untagged
@@ -95,6 +96,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1731087557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958327839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084521fd883b5714cb89c5514c90cfb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  torchMaterial: {fileID: 0}
+  objectToChange: {fileID: 958327841}
+  startColor: {r: 0.8570546, g: 0, b: 1.5157169, a: 0.919133}
+  startIntensity: 1.016925
+  endIntensity: 0
+  blinkOnIntensity: 0.5
+  blinkOffIntensity: 0
+  minTimeBetweenBlink: 0.01
+  maxTimeBetweenBlink: 0.43
+  minOnTime: 0.1
+  maxOnTime: 0.4
 --- !u!1 &1483309559884150875
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,6 +164,7 @@ GameObject:
   - component: {fileID: 1483309560019607511}
   - component: {fileID: 1483309560019607510}
   - component: {fileID: 1483309561377051294}
+  - component: {fileID: 969428793}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -229,7 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 100
   _healRate: 5
-  _numberOfLives: 3
+  _maxNumberOfLives: 3
 --- !u!114 &1483309560019607510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +283,19 @@ MonoBehaviour:
   _fadeScreen: {fileID: 0}
   _transitionToggle: 1
   _transitionSpeed: 1
+--- !u!114 &969428793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483309560019607513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a95b1b7798f3940bdc5a7713485a99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _vCam: {fileID: 0}
 --- !u!1 &1483309560140804550
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,7 +421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _torchVolume: {fileID: 0}
   _maxLuminosity: 100
-  _rateOfDepletion: 5
+  _rateOfDepletion: 1.5
   Depleting: 1
 --- !u!1 &6750077459508068812
 GameObject:
@@ -877,11 +915,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2970b9f1bb8c2c419e2c2a2b5430990, type: 3}
---- !u!4 &422119301951863758 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1247054453727807873, guid: b2970b9f1bb8c2c419e2c2a2b5430990, type: 3}
-  m_PrefabInstance: {fileID: 1483309561341211215}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4976612838620030772 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3349062744606861957, guid: b2970b9f1bb8c2c419e2c2a2b5430990, type: 3}
@@ -895,6 +928,11 @@ Transform:
 --- !u!1 &1753219660471586590 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b2970b9f1bb8c2c419e2c2a2b5430990, type: 3}
+  m_PrefabInstance: {fileID: 1483309561341211215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &422119301951863758 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1247054453727807873, guid: b2970b9f1bb8c2c419e2c2a2b5430990, type: 3}
   m_PrefabInstance: {fileID: 1483309561341211215}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1483309561341211210
