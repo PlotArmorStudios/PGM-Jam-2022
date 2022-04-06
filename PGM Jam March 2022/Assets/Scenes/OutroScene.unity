@@ -1022,6 +1022,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5497887777182036957, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
+      propertyPath: m_margin.y
+      value: -376.70447
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497887777182036957, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5497887777182036957, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
 --- !u!224 &3683253571218469391 stripped
