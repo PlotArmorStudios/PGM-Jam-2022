@@ -43,7 +43,6 @@ public class DialogueSection : MonoBehaviour
         DisplayNextSen();
     }
 
-
     private void OnDestroy() => continueButton.onClick.RemoveListener(ContinueButtonPressed);
 
     private int currentSentenceIndex = 0;
@@ -63,7 +62,6 @@ public class DialogueSection : MonoBehaviour
             }
 
             OnEndDialogue?.Invoke();
-
             return;
         }
 

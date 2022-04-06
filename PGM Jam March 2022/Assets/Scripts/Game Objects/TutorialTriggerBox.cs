@@ -1,8 +1,9 @@
+using Cinemachine;
 using UnityEngine;
 
 public class TutorialTriggerBox : TriggerBox
 {
-    protected override void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (_alreadyTriggered) return;
         
