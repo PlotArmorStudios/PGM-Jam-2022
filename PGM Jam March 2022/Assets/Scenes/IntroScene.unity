@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,6 +250,49 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3722945000199310624, guid: b56ecf6e5ebbda44fb0d164aca4d945b, type: 3}
   m_PrefabInstance: {fileID: 5750015205449811217}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &833254906
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 833254908}
+  - component: {fileID: 833254907}
+  m_Layer: 0
+  m_Name: UISfx
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &833254907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833254906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9a39fdaee7db44e28f059bb08115b48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &833254908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833254906}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.9472027, y: 4.6759744, z: 1.81634}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &972961980
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,6 +909,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OutroScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 5497887775896209234, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5497887775896209235, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1069,6 +1116,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lantern0cutscene
       objectReference: {fileID: 0}
+    - target: {fileID: 3357486685285062708, guid: 4c8fe0a2ba7aebd40b9c51ed2becf122, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3357486685285062709, guid: 4c8fe0a2ba7aebd40b9c51ed2becf122, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1185,6 +1236,38 @@ PrefabInstance:
     - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
       propertyPath: _sceneToLoad
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 833254907}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDialogueDuo
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: F_UISfx, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914609988867614, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7446914610499015068, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
       propertyPath: m_Name
@@ -1489,6 +1572,10 @@ PrefabInstance:
     - target: {fileID: 6870376346581736864, guid: 835b6a2a30fd2614190c58d33a471c4f, type: 3}
       propertyPath: m_Name
       value: Tinted Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 6870376346581736864, guid: 835b6a2a30fd2614190c58d33a471c4f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6870376346581736865, guid: 835b6a2a30fd2614190c58d33a471c4f, type: 3}
       propertyPath: m_Pivot.x
