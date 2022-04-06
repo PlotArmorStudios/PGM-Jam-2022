@@ -35,15 +35,12 @@ public class DialogueSection : MonoBehaviour
         if (GameManager.Instance)
             GameManager.Instance.DeactivatePlayer();
         numOfSentences = sentences.Length;
-        continueButton.onClick.AddListener(ContinueButtonPressed);
 
         if (_resetDialogueOnEnable)
             currentSentenceIndex = 0;
 
         DisplayNextSen();
     }
-
-    private void OnDestroy() => continueButton.onClick.RemoveListener(ContinueButtonPressed);
 
     private int currentSentenceIndex = 0;
 
@@ -65,6 +62,8 @@ public class DialogueSection : MonoBehaviour
             return;
         }
 
+        continueButton.onClick.AddListener(ContinueButtonPressed);
+
         dialogue.Play("TextFadeIn", -1, 0f);
         dialogueText.text = sentences[currentSentenceIndex];
         if (!characterName[currentSentenceIndex].Equals(currentName))
@@ -80,6 +79,7 @@ public class DialogueSection : MonoBehaviour
 
     private void ContinueButtonPressed()
     {
+        continueButton.onClick.RemoveListener(ContinueButtonPressed);
         dialogue.Play("TextFadeOut", -1, 0f);
         if (currentSentenceIndex < numOfSentences && !characterName[currentSentenceIndex].Equals(currentName)
             || currentSentenceIndex == numOfSentences)
