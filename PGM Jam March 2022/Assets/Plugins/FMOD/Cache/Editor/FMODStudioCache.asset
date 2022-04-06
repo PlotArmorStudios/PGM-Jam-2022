@@ -43,7 +43,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -453165424034376501}
+  - {fileID: -2871256672059387217}
   MinDistance: 0
   MaxDistance: 0
   Length: 10000
@@ -951,6 +951,26 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &-2871256672059387217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-2856632661502900355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,7 +1244,7 @@ MonoBehaviour:
   - {fileID: 3410334977035440038}
   StringsBanks:
   - {fileID: 9172758055681796512}
-  stringsBankWriteTime: 637847943210000000
+  stringsBankWriteTime: 637848421709263862
   cacheVersion: 6
 --- !u!114 &21317410224432735
 MonoBehaviour:
@@ -1627,7 +1647,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 1047065494967828270}
+  - {fileID: 7461401929403623349}
   MinDistance: 0
   MaxDistance: 0
   Length: 96000
@@ -1686,7 +1706,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637847943210000000
+  lastModified: 637848421709253894
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2196,6 +2216,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &7461401929403623349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Ambient Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &7744329957747878149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,7 +2414,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637847943210000000
+  lastModified: 637848421709263862
   LoadResult: 0
   FileSizes:
   - Name: 
