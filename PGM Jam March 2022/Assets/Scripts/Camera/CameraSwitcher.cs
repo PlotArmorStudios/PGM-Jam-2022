@@ -15,7 +15,7 @@ public static class CameraSwitcher
     
     public static void SwitchCamera(CinemachineVirtualCamera camera)
     {
-        camera.Priority = 10;
+        camera.Priority = 20;
         ActiveCamera = camera;
 
         foreach (var cam in _cameras)

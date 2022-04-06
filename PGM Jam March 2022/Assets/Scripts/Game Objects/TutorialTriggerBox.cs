@@ -10,7 +10,7 @@ public class TutorialTriggerBox : TriggerBox
         dialogueGameObject.SetActive(true);
         NPC.transform.position = NPCSpawnLocation.position;
         NPC.transform.LookAt(other.gameObject.transform.position);
-        _vCam.Priority = 20;
+        _vCam.Priority = 25;
         _alreadyTriggered = true;
     }
 }
