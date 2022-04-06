@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1236,6 +1236,40 @@ PrefabInstance:
     - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
       propertyPath: _sceneToLoad
       value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Alma has entered the dark forest at the edge of her town for the very
+        first time. There was a warm light twinkling through the leaves at dusk which
+        drew her in.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: "Equipped with her trusty walking stick, she moved through the forest
+        as the evening\u2019s light continued to wane, but the warm glow that had
+        called to her, and which had seemed so close before, somehow remained just
+        out of reach, drawing her deeper and deeper into the woods."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: sentences.Array.data[2]
+      value: Finally, she reaches the source of the mysterious glow, but the stars
+        are now visible in the ink-black sky and Alma is lost. She seeks refuge from
+        the heavy darkness by the magical lantern that drew her in. It emits a warm,
+        safe radiance that stands at a stark contrast to the cold night that has
+        fallen around her.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: sentences.Array.data[3]
+      value: "But as the lantern light starts to flicker and the crunching of leaves
+        and snapping of twigs can be heard in the darkness around her, Alma begins
+        to worry about all the frightening tales she\u2019s heard about these woods.
+        No one she knows has ever entered the forest unless they had to, and never
+        at night."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: sentences.Array.data[4]
+      value: "She\u2019d like to think she\u2019s outgrown silly ghost stories, but
+        could they be true?"
       objectReference: {fileID: 0}
     - target: {fileID: 7446914609648263891, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
