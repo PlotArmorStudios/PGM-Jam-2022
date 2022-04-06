@@ -94,4 +94,9 @@ public class DialogueSection : MonoBehaviour
     {
         characterName[0] = name;
     }
+
+    public void InvokeEndDialogue()
+    {
+        OnEndDialogue?.Invoke();
+    }
 }
