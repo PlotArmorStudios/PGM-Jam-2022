@@ -1162,6 +1162,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1768947824}
     m_Modifications:
+    - target: {fileID: 7446914608424674577, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -223
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674579, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_margin.y
+      value: -335.7815
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674579, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7446914608424674579, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7446914608424674582, guid: d4f0358d307bbcb419166ab87488498a, type: 3}
       propertyPath: _sceneLoader
       value: 
