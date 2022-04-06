@@ -11,9 +11,10 @@ public class TriggerBox : MonoBehaviour
     [SerializeField] protected GameObject dialogueGameObject;
     [SerializeField] private GameObject collectMoreShards;
     [SerializeField] protected string NPCName;
+    [SerializeField] private Transform _npcSpot;
 
     protected CinemachineVirtualCamera _vCam { get; set; }
-    
+
     protected bool _alreadyTriggered;
 
     private void OnEnable()
@@ -24,7 +25,11 @@ public class TriggerBox : MonoBehaviour
 
     private void OnDisable() => DialogueSection.OnEndDialogue -= ResetVCam;
 
-    private void ResetVCam() => _vCam.Priority = 0;
+    private void ResetVCam()
+    {
+        NPC.transform.position = _npcSpot.position;
+        _vCam.gameObject.SetActive(false);
+    }
 
     protected virtual void OnTriggerEnter(Collider other)
     {
@@ -33,8 +38,9 @@ public class TriggerBox : MonoBehaviour
         var player = other.GetComponent<Player>();
         if (!player) return;
 
+        _vCam.gameObject.SetActive(true);
         _vCam.Priority = 20;
-        
+
         if (GameManager.Instance.NumberOfShards >= GameManager.Instance.RequiredShardsToCollect)
         {
             dialogueGameObject.SetActive(true);

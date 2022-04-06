@@ -93,8 +93,9 @@ public class DialogueSection : MonoBehaviour
         characterName[0] = name;
     }
 
-    public void InvokeEndDialogue()
+    public IEnumerator InvokeEndDialogue()
     {
+        yield return new WaitForSeconds(.5f);
         OnEndDialogue?.Invoke();
     }
 }
