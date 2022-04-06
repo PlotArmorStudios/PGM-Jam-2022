@@ -21,7 +21,6 @@ public class PlayerHealth : MonoBehaviour
     private int _numberOfLives;
     public bool IsAlive { get; set; }
 
-    private void OnValidate() => _globalVolume = GetComponentInChildren<Volume>();
     private void OnEnable() => PhantomAttack.OnPhantomAttack += TakeDamage;
     private void OnDisable() => PhantomAttack.OnPhantomAttack -= TakeDamage;
 
@@ -32,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
         IsAlive = true;
         _sceneLoader = GetComponent<SceneLoader>();
         _numberOfLives = _maxNumberOfLives;
+        _globalVolume = GetComponentInChildren<Volume>();
     }
 
     private void Update()

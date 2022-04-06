@@ -43,13 +43,13 @@ public class DialogueSection : MonoBehaviour
         DisplayNextSen();
     }
 
+
     private void OnDestroy() => continueButton.onClick.RemoveListener(ContinueButtonPressed);
 
     private int currentSentenceIndex = 0;
 
     private void DisplayNextSen()
     {
-        continueButton.onClick.AddListener(ContinueButtonPressed);
         if (currentSentenceIndex >= numOfSentences)
         {
             dialogueSection.Play("DialogueFlyOut", -1, 0f);
@@ -82,11 +82,6 @@ public class DialogueSection : MonoBehaviour
 
     private void ContinueButtonPressed()
     {
-        //if (dialogue.GetCurrentAnimatorStateInfo(0).IsName("TextFadeOut"))
-        //{
-        //    DisplayNextSen();
-        //}
-        continueButton.onClick.RemoveListener(ContinueButtonPressed);
         dialogue.Play("TextFadeOut", -1, 0f);
         if (currentSentenceIndex < numOfSentences && !characterName[currentSentenceIndex].Equals(currentName)
             || currentSentenceIndex == numOfSentences)
