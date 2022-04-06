@@ -17,7 +17,7 @@ public class MasterLantern : Lantern
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && _playerInRange)
+        if (Input.GetKeyDown(KeyCode.R) && _playerInRange)
         {
             Purify();
         }
