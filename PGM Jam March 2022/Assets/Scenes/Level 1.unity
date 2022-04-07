@@ -13909,6 +13909,24 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: You have done it, as I knew you sssurely would.
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: I would sssave these woods myself if I could, but it must be you. You
+        are sssafe in the darkness as long as that light in your hand burnsss strong,
+        Alma. The ssstrength of its protection is determined by the glow it eminatesss.
+        Once it beginss to flicker, you are in grave danger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: The creatures of the forest cannot ressst until the phantom is gone.
+        Use what I have taught you and do not delay on your journey to power the
+        next lanterns. If you do not make it in time, the sssoul of the forest will
+        be lost forever.
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: characterName.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -13951,6 +13969,47 @@ PrefabInstance:
     - target: {fileID: 482855704555387120, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 7.63739
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -6.3625183
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 782
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387121, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -449
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855704555387122, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 482855704561104392, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: m_AnchoredPosition.x
