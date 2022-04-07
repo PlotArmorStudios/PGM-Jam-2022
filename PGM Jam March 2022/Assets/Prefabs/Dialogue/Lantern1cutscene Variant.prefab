@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1640320485844620367, guid: 4c8fe0a2ba7aebd40b9c51ed2becf122, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3357486683198139582, guid: 4c8fe0a2ba7aebd40b9c51ed2becf122, type: 3}
       propertyPath: sentences.Array.data[0]
       value: You have done it, asss I knew you would.
