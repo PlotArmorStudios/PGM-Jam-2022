@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
+using Color = UnityEngine.Color;
 
 public class FieldOfView : MonoBehaviour
 {
     [SerializeField] private LayerMask _targetMask;
     [SerializeField] private LayerMask _obstructionMask;
+    [SerializeField] private float _meshResolution;
 
     [Range(0, 360)] public float Angle;
     public float Radius;
@@ -15,13 +18,99 @@ public class FieldOfView : MonoBehaviour
 
     private Entity _entity;
 
+    public MeshFilter viewMeshFilter;
+    private Mesh viewMesh;
+    
     private void Start()
     {
+        viewMesh = new Mesh();
+        viewMesh.name = "View Mesh";
+        viewMeshFilter.mesh = viewMesh;
+        
         _entity = GetComponent<Entity>();
         Player = _entity.PlayerTarget;
         StartCoroutine(FOVRoutine());
     }
 
+    private void LateUpdate()
+    {
+        DrawFieldOfView();
+    }
+
+    private void DrawFieldOfView()
+    {
+        int rayCount = Mathf.RoundToInt(Angle * _meshResolution);
+        float stepAngleSize = Angle / rayCount;
+        List<Vector3> viewPoints = new List<Vector3>();
+
+        for (int i = 0; i < rayCount; i++)
+        {
+            float angle = transform.eulerAngles.y - Angle / 2 + stepAngleSize * i;
+            ViewCastInfo newViewCast = ViewCast(angle);
+            viewPoints.Add(newViewCast.Point);
+        }
+
+        int vertexCount = viewPoints.Count + 1;
+        Vector3[] vertices = new Vector3[vertexCount];
+        int[] triangles = new int[(vertexCount - 2) * 3];
+        vertices[0] = Vector3.zero;
+        
+        for (int i = 0; i < vertexCount - 1; i++)
+        {
+            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
+            if (i < vertexCount - 2)
+            {
+                triangles[i + 3] = 0;
+                triangles[i + 3 + 1] = i + 1;
+                triangles[i * 3 + 2] = i + 2;
+            }
+        }
+        viewMesh.Clear();
+        viewMesh.vertices = vertices;
+        viewMesh.triangles = triangles;
+        viewMesh.RecalculateNormals();
+    }
+
+    private ViewCastInfo ViewCast(float globalAngle)
+    {
+        Vector3 direction = DirecionFromAngle(globalAngle, true);
+        RaycastHit hit;
+
+        if (Physics.Raycast(transform.position, direction, out hit, Radius, _obstructionMask))
+        {
+            return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
+        }
+        else
+        {
+            return new ViewCastInfo(false, transform.position + direction * Radius, Radius, globalAngle);
+        }
+    }
+
+    public struct ViewCastInfo
+    {
+        public bool Hit;
+        public Vector3 Point;
+        public float Distance;
+        public float Angle;
+
+        public ViewCastInfo(bool hit, Vector3 point, float distance, float angle)
+        {
+            Hit = hit;
+            Point = point;
+            Distance = distance;
+            Angle = angle;
+        }
+    }
+
+    public Vector3 DirecionFromAngle(float angleInDegrees, bool angleIsGlobal)
+    {
+        if (!angleIsGlobal)
+        {
+            angleInDegrees += transform.eulerAngles.y;
+        }
+
+        return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
 
     private IEnumerator FOVRoutine()
     {
