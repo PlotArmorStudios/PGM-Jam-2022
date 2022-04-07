@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private bool _timerIsOn;
 
     public int NumberOfShards { get; set; }
+    public bool PlayerInDialogue;
     public float CurrentLanternTime => _currentLanternTime;
 
     public bool Paused { get; set; }
@@ -43,7 +44,14 @@ public class GameManager : MonoBehaviour
     {
         OnTurnOnLanterns += StartTimer;
         OnTurnOffLanterns += EndTimer;
+        DialogueSection.OnToggleDialogue += TogglePlayerInDialogue;
         _currentLanternTime = LanternLightDuration;
+    }
+    private void OnDisable()
+    {
+        OnTurnOnLanterns -= StartTimer;
+        OnTurnOffLanterns -= EndTimer;
+        DialogueSection.OnToggleDialogue -= TogglePlayerInDialogue;
     }
 
     public void SwitchPhantomCam() => OnSwitchToPhantomCam?.Invoke();
@@ -92,6 +100,11 @@ public class GameManager : MonoBehaviour
     public void ActivatePlayer()
     {
         OnActivatePlayerControl?.Invoke();
+    }
+
+    public void TogglePlayerInDialogue(bool toggle)
+    {
+        PlayerInDialogue = toggle;
     }
 
     public void UnpauseGame()
