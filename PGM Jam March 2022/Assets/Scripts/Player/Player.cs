@@ -10,15 +10,19 @@ public class Player : MonoBehaviour
     private CharacterController _characterController;
     private GroundCheck _groundCheck;
     private Vector3 _verticalVelocity;
-    
+
     private float _horizontal;
     private float _vertical;
 
     public float _gravity = -9.81f;
     private int _jumpsRemaining;
-    
+
     public Animator Animator { get; set; }
     public PlayerHealth Health { get; set; }
+    public bool IsInDialogue;
+
+    private void OnEnable() => DialogueSection.OnToggleDialogue += ToggleDialogueMode;
+    private void OnDisable() => DialogueSection.OnToggleDialogue -= ToggleDialogueMode;
 
     private void Start()
     {
@@ -36,14 +40,14 @@ public class Player : MonoBehaviour
             _verticalVelocity.y = -2f;
             _jumpsRemaining = _maxJumps;
         }
-        
+
         _horizontal = Input.GetAxis("Horizontal");
-        _vertical= Input.GetAxis("Vertical");
+        _vertical = Input.GetAxis("Vertical");
 
         Vector3 movement = transform.right * _horizontal + transform.forward * _vertical;
 
         Animator.SetBool("Walking", movement.magnitude > .1f);
-        
+
         _characterController.Move(movement * _speed * Time.deltaTime);
 
 
@@ -52,9 +56,14 @@ public class Player : MonoBehaviour
             _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
             _jumpsRemaining--;
         }
-        
+
         _verticalVelocity.y += _gravity * Time.deltaTime;
 
         _characterController.Move(_verticalVelocity * Time.deltaTime);
+    }
+
+    private void ToggleDialogueMode(bool toggle)
+    {
+        IsInDialogue = toggle;
     }
 }

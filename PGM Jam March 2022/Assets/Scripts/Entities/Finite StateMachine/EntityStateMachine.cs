@@ -102,6 +102,11 @@ public class EntityStateMachine : MonoBehaviour
         
         _stateMachine.AddTransition(
             _attack,
+            _avoidPlayer,
+            () => Torch.TorchVolumeWeight > Torch.TorchFractionToAttack || _entity.PlayerTarget.IsInDialogue);
+        
+        _stateMachine.AddTransition(
+            _attack,
             _idle,
             () => DistanceToPlayer > _entity.AttackRadius || !_entity.PlayerTarget.Health.IsAlive);
         

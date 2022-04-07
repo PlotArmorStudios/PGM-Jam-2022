@@ -8,6 +8,7 @@ using TMPro;
 public class DialogueSection : MonoBehaviour
 {
     public static event Action OnEndDialogue;
+    public static event Action<bool> OnToggleDialogue;
 
     [SerializeField] [TextArea(7, 10)] private string[] sentences;
 
@@ -38,7 +39,7 @@ public class DialogueSection : MonoBehaviour
 
         if (_resetDialogueOnEnable)
             currentSentenceIndex = 0;
-
+        OnToggleDialogue?.Invoke(true);
         DisplayNextSen();
     }
 
@@ -59,6 +60,7 @@ public class DialogueSection : MonoBehaviour
             }
 
             OnEndDialogue?.Invoke();
+            OnToggleDialogue?.Invoke(false);
             return;
         }
 
