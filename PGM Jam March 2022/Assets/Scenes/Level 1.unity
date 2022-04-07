@@ -3493,7 +3493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473987177}
-  m_LocalRotation: {x: 0.08302536, y: 0.66198355, z: -0.07415135, w: 0.7412059}
+  m_LocalRotation: {x: 0.08302536, y: 0.6619835, z: -0.074151345, w: 0.74120593}
   m_LocalPosition: {x: 13.573676, y: 48.887844, z: -49.670334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6624,7 +6624,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1014008135}
-  m_LocalRotation: {x: -0.03601102, y: 0.96283555, z: -0.1637392, w: -0.21175557}
+  m_LocalRotation: {x: -0.036011014, y: 0.96283555, z: -0.16373919, w: -0.21175557}
   m_LocalPosition: {x: 148.56, y: 16.03, z: -91.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12629,6 +12629,24 @@ PrefabInstance:
     - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: _requiredNumberOfShards
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: You have done it, as I knew you sssurely would.
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: I would sssave these woods myself if I could, but it must be you. You
+        are sssafe in the darkness as long as that light in your hand burnsss strong,
+        Alma. The ssstrength of its protection is determined by the glow it eminatesss.
+        Once it beginss to flicker, you are in grave danger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
+      propertyPath: sentences.Array.data[6]
+      value: The creatures of the forest cannot ressst until the phantom is gone.
+        Use what I have taught you and do not delay on your journey to power the
+        next lanterns. If you do not make it in time, the sssoul of the forest will
+        be lost forever.
       objectReference: {fileID: 0}
     - target: {fileID: 482855703365222197, guid: 68f7aff61d013da4a87deffdb27c1614, type: 3}
       propertyPath: characterName.Array.size
