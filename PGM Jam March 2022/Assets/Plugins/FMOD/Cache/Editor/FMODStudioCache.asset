@@ -37,8 +37,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Menu Music
   guid: d9dd1bbd0be7e64299a710b489ff642a
-  Banks:
-  - {fileID: 3410334977035440038}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -66,7 +65,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 1440083579255729549}
+  - {fileID: 6211984149618292464}
   MinDistance: 0
   MaxDistance: 0
   Length: 10000
@@ -1276,7 +1275,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 15375
+  Length: 14375
 --- !u!114 &-2323357749631282028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1297,6 +1296,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-1894058507071931819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-1873124983281479276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1521,14 +1540,13 @@ MonoBehaviour:
   - {fileID: -5328986981392365581}
   - {fileID: -3529405289701098764}
   - {fileID: -4707993303294275424}
-  - {fileID: -9057356312688243162}
-  - {fileID: 5465535369531849365}
+  - {fileID: 8056243592936498858}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3410334977035440038}
   StringsBanks:
   - {fileID: 9172758055681796512}
-  stringsBankWriteTime: 637848773070000000
+  stringsBankWriteTime: 637849289390000000
   cacheVersion: 6
 --- !u!114 &21317410224432735
 MonoBehaviour:
@@ -1610,6 +1628,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &284787904010691470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuVsGameplay
+  m_EditorClassIdentifier: 
+  Name: MenuVsGameplay
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &608893747246996286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1790,6 +1828,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &1135184160172622380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &1189592350802066267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,6 +1905,26 @@ MonoBehaviour:
   Min: 0
   Max: 3
   Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1431939534076931640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
   ID:
     data1: 0
     data2: 0
@@ -2054,6 +2132,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &2820363899063742117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &3082076661937938324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,7 +2187,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637848773070000000
+  lastModified: 637849289390000000
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -2133,6 +2231,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &3814968314495688521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuVsGameplay
+  m_EditorClassIdentifier: 
+  Name: MenuVsGameplay
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &4134609320683330680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2148,6 +2266,26 @@ MonoBehaviour:
   Name: Chased
   Min: 0
   Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &4180111709475559469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
   Default: 0
   ID:
     data1: 0
@@ -2253,6 +2391,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &5362710285145395943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &5449323253896839531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2287,16 +2445,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Gameplay Music
   guid: ea325cb91d420d4d89154eab6c9e1600
-  Banks:
-  - {fileID: 3410334977035440038}
+  Banks: []
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -60129946765103122}
+  - {fileID: 8027898760786469787}
+  - {fileID: 6757350564509328739}
   MinDistance: 0
   MaxDistance: 0
-  Length: 96000
+  Length: 167296
 --- !u!114 &5490105632726404520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,6 +2491,26 @@ MonoBehaviour:
   Min: 1
   Max: 16
   Default: 1
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &5781280859855052124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
   ID:
     data1: 0
     data2: 0
@@ -2377,6 +2555,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &6007111470173723785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuVsGameplay
+  m_EditorClassIdentifier: 
+  Name: MenuVsGameplay
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &6007548463951642923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2437,6 +2635,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &6211984149618292464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &6223406360053750076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,6 +2794,26 @@ MonoBehaviour:
   Min: 1
   Max: 30
   Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &6757350564509328739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay Music/MenuVsGameplay
+  m_EditorClassIdentifier: 
+  Name: MenuVsGameplay
+  Min: 0
+  Max: 1
+  Default: 0
   ID:
     data1: 0
     data2: 0
@@ -2743,6 +2981,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &7478763286321626177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &7744329957747878149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2806,6 +3064,51 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 1
+--- !u!114 &8027898760786469787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Gameplay Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &8056243592936498858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  guid: ea325cb91d420d4d89154eab6c9e1600
+  Banks:
+  - {fileID: 3410334977035440038}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4180111709475559469}
+  - {fileID: 284787904010691470}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 167296
 --- !u!114 &8581484701141759768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2941,9 +3244,9 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637848773070000000
+  lastModified: 637849289390000000
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1280
+    Value: 1276
   Exists: 1

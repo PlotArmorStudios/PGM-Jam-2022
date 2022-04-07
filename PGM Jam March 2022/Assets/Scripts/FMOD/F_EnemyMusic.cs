@@ -17,8 +17,6 @@ public class F_EnemyMusic : MonoBehaviour
     private Player _player;
     private Phantom _phantom;
     
-    [SerializeField] private F_MusicPlayer _fMusicPlayer;
-
     void Start()
     {
         _enemyMusicInst = RuntimeManager.CreateInstance(_enemyMusic);
@@ -46,13 +44,13 @@ public class F_EnemyMusic : MonoBehaviour
         }
 
         if (distance <= 75 && distance > 50)
-            _fMusicPlayer.SetLonely(1f);
+            F_MusicPlayer.instance.SetLonely(1f);
         if (distance <= 50 && distance > 25)
-            _fMusicPlayer.SetLonely(2f);
+            F_MusicPlayer.instance.SetLonely(2f);
         if (distance <= 25)
-            _fMusicPlayer.SetLonely(3f);
+            F_MusicPlayer.instance.SetLonely(3f);
         else if (distance > 75)
-            _fMusicPlayer.SetLonely(0f);
+            F_MusicPlayer.instance.SetLonely(0f);
     }
 
     [ContextMenu("Context Menu Log Example")]
@@ -65,14 +63,14 @@ public class F_EnemyMusic : MonoBehaviour
     private void SetMusicDangerInstance()
     {
         _enemyMusicInst.setParameterByID(_enemyParamDes.id, 0, false);
-        _fMusicPlayer.SetLonely(3f);
+        F_MusicPlayer.instance.SetLonely(3f);
     }
 
     [ContextMenu("Reset Music")]
     private void ResetMusicInstance()
     {
         _enemyMusicInst.setParameterByID(_enemyParamDes.id, 30f);
-        _fMusicPlayer.SetLonely(0f);
+        F_MusicPlayer.instance.SetLonely(0f);
     }
 
     private void OnDestroy()
