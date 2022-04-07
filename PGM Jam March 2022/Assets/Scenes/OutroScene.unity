@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -717,6 +717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9a39fdaee7db44e28f059bb08115b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _eventPath: event:/Dialogue Enter
 --- !u!4 &2038642061
 Transform:
   m_ObjectHideFlags: 0
@@ -1039,31 +1040,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 952617207}
+      objectReference: {fileID: 2038642060}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: PlayDialogueDuo
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
+      value: F_UISfx, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: MenuScene
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5497887776193131549, guid: 660f2e2ebf86a2e40a467e1f68b970ce, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

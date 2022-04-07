@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using FMODUnity;
 
 public class TriggerBox : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class TriggerBox : MonoBehaviour
             NPC.transform.position = NPCSpawnLocation.position;
             NPC.transform.LookAt(other.gameObject.transform.position);
             _alreadyTriggered = true;
+            RuntimeManager.PlayOneShotAttached("event:/Dialogue Enter", gameObject);
         }
         else
         {

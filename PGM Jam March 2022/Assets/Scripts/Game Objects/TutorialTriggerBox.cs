@@ -1,5 +1,6 @@
 using Cinemachine;
 using UnityEngine;
+using FMODUnity;
 
 public class TutorialTriggerBox : TriggerBox
 {
@@ -12,5 +13,6 @@ public class TutorialTriggerBox : TriggerBox
         NPC.transform.LookAt(other.gameObject.transform.position);
         _vCam.Priority = 25;
         _alreadyTriggered = true;
+        RuntimeManager.PlayOneShotAttached("event:/Dialogue Enter", gameObject);
     }
 }

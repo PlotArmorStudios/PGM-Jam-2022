@@ -5,9 +5,13 @@ public class F_UISfx : MonoBehaviour
 {
     private float _play = 1f;
 
+    [SerializeField]
+    [EventRef]
+    private string _eventPath;
+
     void Start()
     {
-        
+        RuntimeManager.PlayOneShotAttached(_eventPath, gameObject);
     }
 
     public void PlayClick()
@@ -30,8 +34,11 @@ public class F_UISfx : MonoBehaviour
         _play = _play + 1;
 
         if (_play <= 5)
-            RuntimeManager.PlayOneShotAttached("event:/Dialogue Duo", gameObject);
+            PlayClick();
         else if (_play >= 6)
+        {
+            PlayClick();
             PlayDialogueExit();
+        }
     }
 }
