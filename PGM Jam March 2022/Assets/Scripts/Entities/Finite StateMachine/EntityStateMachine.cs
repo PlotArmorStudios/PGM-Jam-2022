@@ -103,7 +103,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _attack,
             _avoidPlayer,
-            () => Torch.TorchVolumeWeight > Torch.TorchFractionToAttack || _entity.PlayerTarget.IsInDialogue);
+            () => Torch.TorchVolumeWeight > Torch.TorchFractionToAttack || GameManager.Instance.PlayerInDialogue);
         
         _stateMachine.AddTransition(
             _attack,

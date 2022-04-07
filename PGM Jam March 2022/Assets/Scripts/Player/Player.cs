@@ -19,10 +19,6 @@ public class Player : MonoBehaviour
 
     public Animator Animator { get; set; }
     public PlayerHealth Health { get; set; }
-    public bool IsInDialogue;
-
-    private void OnEnable() => DialogueSection.OnToggleDialogue += ToggleDialogueMode;
-    private void OnDisable() => DialogueSection.OnToggleDialogue -= ToggleDialogueMode;
 
     private void Start()
     {
@@ -60,10 +56,5 @@ public class Player : MonoBehaviour
         _verticalVelocity.y += _gravity * Time.deltaTime;
 
         _characterController.Move(_verticalVelocity * Time.deltaTime);
-    }
-
-    private void ToggleDialogueMode(bool toggle)
-    {
-        IsInDialogue = toggle;
     }
 }
