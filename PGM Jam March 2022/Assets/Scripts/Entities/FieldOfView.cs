@@ -18,15 +18,21 @@ public class FieldOfView : MonoBehaviour
 
     private Entity _entity;
 
+    public MeshFilter viewMeshFilter;
+    private Mesh viewMesh;
     
     private void Start()
     {
+        viewMesh = new Mesh();
+        viewMesh.name = "View Mesh";
+        viewMeshFilter.mesh = viewMesh;
+        
         _entity = GetComponent<Entity>();
         Player = _entity.PlayerTarget;
         StartCoroutine(FOVRoutine());
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         DrawFieldOfView();
     }
@@ -36,7 +42,7 @@ public class FieldOfView : MonoBehaviour
         int rayCount = Mathf.RoundToInt(Angle * _meshResolution);
         float stepAngleSize = Angle / rayCount;
         List<Vector3> viewPoints = new List<Vector3>();
-        
+
         for (int i = 0; i < rayCount; i++)
         {
             float angle = transform.eulerAngles.y - Angle / 2 + stepAngleSize * i;
@@ -48,6 +54,21 @@ public class FieldOfView : MonoBehaviour
         Vector3[] vertices = new Vector3[vertexCount];
         int[] triangles = new int[(vertexCount - 2) * 3];
         vertices[0] = Vector3.zero;
+        
+        for (int i = 0; i < vertexCount - 1; i++)
+        {
+            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);
+            if (i < vertexCount - 2)
+            {
+                triangles[i + 3] = 0;
+                triangles[i + 3 + 1] = i + 1;
+                triangles[i * 3 + 2] = i + 2;
+            }
+        }
+        viewMesh.Clear();
+        viewMesh.vertices = vertices;
+        viewMesh.triangles = triangles;
+        viewMesh.RecalculateNormals();
     }
 
     private ViewCastInfo ViewCast(float globalAngle)
@@ -63,8 +84,8 @@ public class FieldOfView : MonoBehaviour
         {
             return new ViewCastInfo(false, transform.position + direction * Radius, Radius, globalAngle);
         }
-        
     }
+
     public struct ViewCastInfo
     {
         public bool Hit;
@@ -80,13 +101,14 @@ public class FieldOfView : MonoBehaviour
             Angle = angle;
         }
     }
-    
+
     public Vector3 DirecionFromAngle(float angleInDegrees, bool angleIsGlobal)
     {
         if (!angleIsGlobal)
         {
             angleInDegrees += transform.eulerAngles.y;
         }
+
         return new Vector3(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), 0, Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
 
