@@ -65,7 +65,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 6211984149618292464}
+  - {fileID: -4978043210290271220}
   MinDistance: 0
   MaxDistance: 0
   Length: 10000
@@ -801,6 +801,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-4978043210290271220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Phantom Music/distance
+  m_EditorClassIdentifier: 
+  Name: distance
+  Min: 1
+  Max: 30
+  Default: 30
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-4884276033515721385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,6 +1436,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-837426770876625228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/Lonely
+  m_EditorClassIdentifier: 
+  Name: Lonely
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &-581790523974445345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,7 +1586,7 @@ MonoBehaviour:
   - {fileID: 3410334977035440038}
   StringsBanks:
   - {fileID: 9172758055681796512}
-  stringsBankWriteTime: 637849289390000000
+  stringsBankWriteTime: 637849371013071958
   cacheVersion: 6
 --- !u!114 &21317410224432735
 MonoBehaviour:
@@ -1989,6 +2029,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &1616360589563637623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MenuVsGameplay
+  m_EditorClassIdentifier: 
+  Name: MenuVsGameplay
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1941391409781471804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2187,7 +2247,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637849289390000000
+  lastModified: 637849371013071958
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -3104,8 +3164,8 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4180111709475559469}
-  - {fileID: 284787904010691470}
+  - {fileID: -837426770876625228}
+  - {fileID: 1616360589563637623}
   MinDistance: 0
   MaxDistance: 0
   Length: 167296
@@ -3244,7 +3304,7 @@ MonoBehaviour:
   Path: Assets/FMODBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637849289390000000
+  lastModified: 637849371013071958
   LoadResult: 0
   FileSizes:
   - Name: 
