@@ -32,7 +32,8 @@ public class TorchTop : MonoBehaviour
         if (Torch.TorchVolumeWeight > Torch.TorchFractionToAttack)
         {
             isBlinking = false;
-            torchMaterial.SetColor("_EmissionColor", startColor * (startIntensity - endIntensity) * Torch.TorchVolumeWeight);
+            torchMaterial.SetColor("_EmissionColor", startColor * (startIntensity - endIntensity) * 
+                (Torch.TorchVolumeWeight * (1/(1- Torch.TorchFractionToAttack)) - ((1 / (1 - Torch.TorchFractionToAttack))-1)));
         }
         else if (isBlinking)
         {
