@@ -6,7 +6,7 @@ public class F_MusicPlayer : MonoBehaviour
 {
     [SerializeField]
     [EventRef]
-    private string _ambientMusic;
+    private string _gameplayMusicInst;
 
     private EventInstance _musicInst;
 
@@ -16,10 +16,10 @@ public class F_MusicPlayer : MonoBehaviour
 
     void Start()
     {
-        _musicInst = RuntimeManager.CreateInstance(_ambientMusic);
+        _musicInst = RuntimeManager.CreateInstance(_gameplayMusicInst);
         _musicInst.start();
 
-        _eventDes = RuntimeManager.GetEventDescription(_ambientMusic);
+        _eventDes = RuntimeManager.GetEventDescription(_gameplayMusicInst);
         _eventDes.getParameterDescriptionByName("Lonely", out _paramDes);
     }
 
