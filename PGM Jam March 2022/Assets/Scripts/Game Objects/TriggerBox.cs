@@ -56,6 +56,7 @@ public class TriggerBox : MonoBehaviour
             NPC.transform.position = NPCSpawnLocation.position;
             NPC.transform.LookAt(other.gameObject.transform.position);
             collectMoreShards.SetActive(true);
+            RuntimeManager.PlayOneShotAttached("event:/Dialogue Enter", gameObject);
         }
     }
 }
