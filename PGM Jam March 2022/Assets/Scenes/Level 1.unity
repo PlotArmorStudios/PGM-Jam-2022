@@ -3493,7 +3493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473987177}
-  m_LocalRotation: {x: 0.08302536, y: 0.6619835, z: -0.074151345, w: 0.74120593}
+  m_LocalRotation: {x: 0.08302536, y: 0.66198355, z: -0.07415135, w: 0.7412059}
   m_LocalPosition: {x: 13.573676, y: 48.887844, z: -49.670334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11842,18 +11842,6 @@ PrefabInstance:
       propertyPath: _vCam
       value: 
       objectReference: {fileID: 169108684}
-    - target: {fileID: 1731087557, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
-      propertyPath: minOnTime
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731087557, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
-      propertyPath: startIntensity
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1731087557, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
-      propertyPath: blinkOnIntensity
-      value: 0.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1483309560019607513, guid: 0ad49aaba3a097f4cb8e8b79bdde6a22, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11986,9 +11974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899728127334832129, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
       propertyPath: m_LocalRotation.w
-
       value: 0.40976813
-
       objectReference: {fileID: 0}
     - target: {fileID: 899728127334832129, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
       propertyPath: m_LocalRotation.x
@@ -12000,9 +11986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 899728127334832129, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
       propertyPath: m_LocalRotation.z
-
       value: 0.049220487
-
       objectReference: {fileID: 0}
     - target: {fileID: 6142803902739765122, guid: e9e6ee16f1ef24348a8a8053bdb18c37, type: 3}
       propertyPath: m_RootOrder

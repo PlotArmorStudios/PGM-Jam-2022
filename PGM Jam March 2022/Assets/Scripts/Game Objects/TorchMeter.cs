@@ -23,8 +23,7 @@ public class TorchMeter : MonoBehaviour
         torchMeter.fillAmount = Torch.TorchVolumeWeight;
         if (Torch.TorchVolumeWeight > Torch.TorchFractionToAttack)
         {
-            Color lerpedColor = Color.Lerp(endColor, startColor, (1 / (1 - Torch.TorchFractionToAttack))
-                * (Torch.TorchVolumeWeight - Torch.TorchFractionToAttack));
+            Color lerpedColor = Color.Lerp(endColor, startColor, 1.42f * (Torch.TorchVolumeWeight - Torch.TorchFractionToAttack));
             torchMeter.color = lerpedColor;
         }
         else
