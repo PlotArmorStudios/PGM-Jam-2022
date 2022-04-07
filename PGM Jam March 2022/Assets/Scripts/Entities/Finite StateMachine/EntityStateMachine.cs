@@ -102,7 +102,7 @@ public class EntityStateMachine : MonoBehaviour
         
         _stateMachine.AddTransition(
             _attack,
-            _avoidPlayer,
+            _returnHome,
             () => Torch.TorchVolumeWeight > Torch.TorchFractionToAttack || GameManager.Instance.PlayerInDialogue);
         
         _stateMachine.AddTransition(
@@ -129,6 +129,11 @@ public class EntityStateMachine : MonoBehaviour
             _returnHome,
             _chasePlayer,
             () => DistanceToPlayer < _entity.FieldOfView.Radius && Torch.TorchVolumeWeight <= Torch.TorchFractionToAttack);
+        
+        _stateMachine.AddTransition(
+            _chasePlayer,
+            _returnHome,
+            () => GameManager.Instance.PlayerInDialogue);
 
         //_stateMachine.AddAnyTransition(_dead, () => _entity.Health.CurrentHealthValue <= 0);
     }
