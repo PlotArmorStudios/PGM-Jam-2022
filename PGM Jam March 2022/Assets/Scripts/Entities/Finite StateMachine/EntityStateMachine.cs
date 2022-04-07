@@ -88,7 +88,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _patrol,
             _chasePlayer,
-            () => DistanceToPlayer < _entity.FieldOfView.Radius && Torch.TorchVolumeWeight <= Torch.TorchFractionToAttack);
+            () => DistanceToPlayer < _entity.FieldOfView.Radius && CanSeePlayer && Torch.TorchVolumeWeight <= Torch.TorchFractionToAttack);
 
         _stateMachine.AddTransition(
             _chasePlayer,
@@ -98,7 +98,7 @@ public class EntityStateMachine : MonoBehaviour
         _stateMachine.AddTransition(
             _attack,
             _chasePlayer,
-            () => DistanceToPlayer > _entity.AttackRadius);
+            () => DistanceToPlayer > _entity.AttackRadius && CanSeePlayer);
         
         _stateMachine.AddTransition(
             _attack,
