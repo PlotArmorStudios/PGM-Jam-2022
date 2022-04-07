@@ -12,7 +12,6 @@ public class F_EnemyMusic : MonoBehaviour
 
     private EventDescription _enemyEventDes;
     private PARAMETER_DESCRIPTION _enemyParamDes;
-
     
     private Player _player;
     private Phantom _phantom;

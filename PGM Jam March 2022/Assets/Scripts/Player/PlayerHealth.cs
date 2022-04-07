@@ -59,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
         _numberOfLives--;
         IsAlive = false;
         _animator.SetTrigger("Die");
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Player Death", gameObject);
 
         GameManager.Instance.DeactivatePlayer();
 

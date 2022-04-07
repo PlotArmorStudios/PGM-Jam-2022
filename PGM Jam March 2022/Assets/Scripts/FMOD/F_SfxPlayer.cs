@@ -3,17 +3,18 @@ using FMODUnity;
 
 public class F_SfxPlayer : MonoBehaviour
 {
-    [SerializeField]
-    [EventRef]
-    private string _footstepEventPath;
-
     private void Start()
     {
         RuntimeManager.PlayOneShotAttached("event:/Intro", gameObject);
     }
 
-    public void PlayFootsteps()
+    public void PlayPlayerFootsteps()
     {
-        RuntimeManager.PlayOneShotAttached(_footstepEventPath, gameObject);
+        RuntimeManager.PlayOneShotAttached("event:/Footsteps", gameObject);
+    }
+
+    public void PlayPhantomFootsteps()
+    {
+        RuntimeManager.PlayOneShotAttached("event:/Phantom Footsteps", gameObject);
     }
 }
