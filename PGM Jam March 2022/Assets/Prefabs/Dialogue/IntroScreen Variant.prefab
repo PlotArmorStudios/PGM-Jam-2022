@@ -1,5 +1,154 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8283736484314522607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1865941097144236887}
+  - component: {fileID: 8380247220725008079}
+  - component: {fileID: 5885470352341246587}
+  - component: {fileID: 5137228299209985395}
+  - component: {fileID: 4236168518481804938}
+  m_Layer: 5
+  m_Name: ContinueButton (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1865941097144236887
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283736484314522607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7446914610499015069}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 782, y: -449}
+  m_SizeDelta: {x: -36, y: -36}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8380247220725008079
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283736484314522607}
+  m_CullTransparentMesh: 1
+--- !u!114 &5885470352341246587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283736484314522607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9210342, b: 0.28930813, a: 1}
+    m_PressedColor: {r: 1, g: 0.8888889, b: 0, a: 0.7490196}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4236168518481804938}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: F_UISfx, Assembly-CSharp
+        m_MethodName: PlayDialogueDuo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!95 &5137228299209985395
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283736484314522607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0801ef553fe626343a3c63f7f7e391a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4236168518481804938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283736484314522607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.99607843, g: 0.9490196, b: 0.57254905, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: b19aa475aaf2d3f44bc05b6fc5011c31, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1001 &1963120820783231655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8,6 +157,38 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8795931230175960827, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayDialogueDuo
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: F_UISfx, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599860, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035303869599862, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -101,12 +282,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: m_Name
-      value: IntroScreen
+      value: IntroScreen Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304696636219, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: _sceneLoader
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: _sceneToLoad
+      value: Level 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+      propertyPath: continueButton
+      value: 
+      objectReference: {fileID: 5885470352341246587}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.size
       value: 5
@@ -114,33 +307,36 @@ PrefabInstance:
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[0]
       value: Alma has entered the dark forest at the edge of her town for the very
-        first time. She saw something glowing out there among the trees, and her
-        curiosity got the best of her, so equipped with her trusty walking stick,
-        she decided to investigate.
+        first time. There was a warm light twinkling through the leaves at dusk which
+        drew her in.
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: "But the light which seemed so close before somehow remained just out
-        of reach, drawing her deeper and deeper into the woods, and now it has grown
-        dark and she\u2019s lost."
+      value: "Equipped with her trusty walking stick, she moved through the forest
+        as the evening\u2019s light continued to wane, but the warm glow that had
+        called to her, and which had seemed so close before, somehow remained just
+        out of reach, drawing her deeper and deeper into the woods."
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: She seeks refuge from the heavy darkness by a magical kind of Lantern
-        that she assumes must be what lured her in, as it emits a warm, safe glow
-        that stands at a stark contrast to the cold night that has fallen around
-        her.
+      value: Finally, she reaches the source of the mysterious glow, but the stars
+        are now visible in the ink-black sky and Alma is lost. She seeks refuge from
+        the heavy darkness by the magical lantern that drew her in. It emits a warm,
+        safe radiance that stands at a stark contrast to the cold night that has
+        fallen around her.
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: "As the Lantern light starts to flicker, Alma begins to worry about
-        all the frightening tales she\u2019s heard about these woods."
+      value: "But as the lantern light starts to flicker and the crunching of leaves
+        and snapping of twigs can be heard in the darkness around her, Alma begins
+        to worry about all the frightening tales she\u2019s heard about these woods.
+        No one she knows has ever entered the forest unless they had to, and never
+        at night."
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: "No one she knows has ever entered the forest unless they had to, and
-        never at night. She\u2019d like to think she\u2019s outgrown silly ghost
-        stories, but could they be true?"
+      value: "She\u2019d like to think she\u2019s outgrown silly ghost stories, but
+        could they be true?"
       objectReference: {fileID: 0}
     - target: {fileID: 8964035304891930545, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
       propertyPath: sentences.Array.data[5]
@@ -200,3 +396,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+--- !u!224 &7446914610499015069 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8964035304696636218, guid: 1d780b486f119394b96508ff1a77224a, type: 3}
+  m_PrefabInstance: {fileID: 1963120820783231655}
+  m_PrefabAsset: {fileID: 0}
