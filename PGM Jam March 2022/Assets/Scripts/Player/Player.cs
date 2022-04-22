@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -20,6 +21,23 @@ public class Player : MonoBehaviour
     public Animator Animator { get; set; }
     public PlayerHealth Health { get; set; }
 
+    [SerializeField] private InputActionReference move;
+    [SerializeField] private InputActionReference jump;
+
+    private void OnEnable()
+    {
+        move.action.Enable();
+        jump.action.Enable();
+        jump.action.started += OnJumpInput;
+    }
+
+    private void OnDisable()
+    {
+        move.action.Disable();
+        jump.action.started -= OnJumpInput;
+        jump.action.Disable();
+    }
+
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -37,8 +55,11 @@ public class Player : MonoBehaviour
             _jumpsRemaining = _maxJumps;
         }
 
-        _horizontal = Input.GetAxis("Horizontal");
-        _vertical = Input.GetAxis("Vertical");
+        //_horizontal = Input.GetAxis("Horizontal");
+        //_vertical = Input.GetAxis("Vertical");
+        _horizontal = move.action.ReadValue<Vector2>().x;
+        _vertical = move.action.ReadValue<Vector2>().y;
+
 
         Vector3 movement = transform.right * _horizontal + transform.forward * _vertical;
 
@@ -47,14 +68,25 @@ public class Player : MonoBehaviour
         _characterController.Move(movement * _speed * Time.deltaTime);
 
 
-        if (Input.GetButtonDown("Jump") && _jumpsRemaining > 0)
-        {
-            _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
-            _jumpsRemaining--;
-        }
+        //if (Input.GetButtonDown("Jump") && _jumpsRemaining > 0)
+        //{
+        //    _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
+        //    _jumpsRemaining--;
+        //}
 
         _verticalVelocity.y += _gravity * Time.deltaTime;
 
         _characterController.Move(_verticalVelocity * Time.deltaTime);
+    }
+    private void OnJumpInput(InputAction.CallbackContext obj)
+    {
+        if (obj.started)
+        {
+            if (_jumpsRemaining > 0)
+            {
+                _verticalVelocity.y = Mathf.Sqrt(_jumpHeight * -2f * _gravity);
+                _jumpsRemaining--;
+            }
+        }
     }
 }
