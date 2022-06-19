@@ -18,6 +18,7 @@ public class TorchTop : MonoBehaviour
     [SerializeField] private float maxTimeBetweenBlink = 0.7f;
     [SerializeField] private float minOnTime = 0.1f;
     [SerializeField] private float maxOnTime = 0.4f;
+    
     // Start is called before the first frame update
     void Start()
     {
